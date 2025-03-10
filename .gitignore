@@ -11,6 +11,7 @@ Gofttt/db.sqlite3
 Gofttt/media
 Gofttt/static
 
+
 # cache files
 Gofttt/__pycache__
 Gofttt/*/__pycache__
