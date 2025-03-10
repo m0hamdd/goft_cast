@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+
+    <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/photo17166891664.jpg' %}')">
+        <div class="container">
+            <h2 class="breadcrumb-title">خاطرات بی‌نام</h2>
+            <ul class="breadcrumb-menu">
+                <li><a href="{% url 'home:index' %}">خانه</a></li>
+                <li class="active">خاطرات بی‌نام</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="podcast-area py-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="podcast-sidebar">
+                        <div class="podcast-widget">
+                            <div class="podcast-search-form">
+                                <h4 class="widget-title">جستجو</h4>
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="جستجو">
+                                        <button type="search"><i class="feather-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="podcast-widget">
+                            <h4 class="widget-title">دسته بندی</h4>
+                            <ul class="category-list">
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>خاطرات بی‌نام<span>(۱۵)</span></a></li>
+                                <!-- <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        آموزش<span>(۲۰)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i> پادکست
+                                        لایف استایل<span>(۰۵)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        سفر<span>(۰۷)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        تکنولوژي<span>(۰۹)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        پزشکی<span>(۲۵)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        کمدی<span>(۲۱)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        رشد زندگی<span>(۱۲)</span></a></li> -->
+                            </ul>
+                        </div>
+                        <div class="podcast-widget">
+                            <h4 class="widget-title">مرتب سازی</h4>
+                            <ul class="checkbox-list">
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="order1">
+                                        <label class="form-check-label" for="order1">جدیدترین</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="order2">
+                                        <label class="form-check-label" for="order2">مشهورترین</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="order3">
+                                        <label class="form-check-label" for="order3">ترندترین</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="podcast-sort">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 col-lg-6 col-xl-8">
+                                <div class="podcast-sort-show">نمایش ۱-۱۵ از ۵۰ نتیجه</div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="podcast-sort-box">
+                                    <span class="podcast-sort-label"> مرتب سازی:</span>
+                                    <select class="select">
+                                        <option value="1">پیش فرض</option>
+                                        <option value="2">بیشترین بازدید</option>
+                                        <option value="3">بیشترین امتیاز</option>
+                                        <option value="4">بیشترین لایک</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="episode-list">
+                        <div class="row g-4">
+                            <div class="col-md-12">
+                                <div class="episode-item">
+                                    <div class="episode-img">
+                                        <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                                        <img src="{% static 'assets/images/goft/photo17066905907.jpg' %}" alt="">
+                                    </div>
+                                    <div class="episode-content">
+                                        <h4><a href="#">خاطره بی‌نام: ۱</a></h4>
+                                        <div class="episode-meta">
+                                            <ul>
+                                                <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
+                                                <li><i class="far fa-calendar-alt"></i>۲۰ تیر , ۱۴۰۳</li>
+                                            </ul>
+                                        </div>
+                                        <p>
+                                            ا«دکتر فقط برای دلخوش کردن بچه‌ها میگه آمبولانس خبر کنید!».
+                                        </p>
+                                        <p>#شخصی #دهه_۱۳۶۰ #ماهان #نقل‌_مستقیم #بازگشت_از_مرگ</p>
+                                        <div class="episode-bottom">
+                                            <div class="episode-host">
+                                                <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
+                                            </div>
+                                            <div class="episode-player">
+                                                <button type="button" class="player-btn amplitude-play-pause"
+                                                    data-song-add="8">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="episode-item">
+                                    <div class="episode-img">
+                                        <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                                        <img src="{% static 'assets/images/goft/photo17066905907.jpg' %}" alt="">
+                                    </div>
+                                    <div class="episode-content">
+                                        <h4><a href="#">خاطره بی‌نام: 2</a></h4>
+                                        <div class="episode-meta">
+                                            <ul>
+                                                <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
+                                                <li><i class="far fa-calendar-alt"></i>۲۰ تیر , ۱۴۰۳</li>
+                                            </ul>
+                                        </div>
+                                        <p>
+                                            ا«دکتر فقط برای دلخوش کردن بچه‌ها میگه آمبولانس خبر کنید!».
+                                        </p>
+                                        <p>#شخصی #دهه_۱۳۶۰ #ماهان #نقل‌_مستقیم #بازگشت_از_مرگ</p>
+
+                                        <div class="episode-bottom">
+                                            <div class="episode-host">
+                                                <h6><i class="far fa-user-tie-hair"></i>توسط نیکی کریمی</h6>
+                                            </div>
+                                            <div class="episode-player">
+                                                <button type="button" class="player-btn amplitude-play-pause"
+                                                    data-song-add="9">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="episode-item">
+                                    <div class="episode-img">
+                                        <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                                        <img src="{% static 'assets/images/goft/photo17066897563.jpg' %}" alt="">
+                                    </div>
+                                    <div class="episode-content">
+                                        <h4><a href="#">خاطره بی‌نام: 3</a></h4>
+                                        <div class="episode-meta">
+                                            <ul>
+                                                <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
+                                                <li><i class="far fa-calendar-alt"></i>۲۰ تیر , ۱۴۰۳</li>
+                                            </ul>
+                                        </div>
+                                        <p>
+                                            خاطره به زبان ترکی آذری است به همراه برگردان فارسی.
+                                        </p>
+                                        <p>#اجتماعی #دهه_۱۳۵۰ #زنجان_شاهداغ #خانه‌دار #نقل‌_مستقیم #واکسیناسیون</p>
+
+                                        <div class="episode-bottom">
+                                            <div class="episode-host">
+                                                <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
+                                            </div>
+                                            <div class="episode-player">
+                                                <button type="button" class="player-btn amplitude-play-pause"
+                                                    data-song-add="10">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="episode-item">
+                                    <div class="episode-img">
+                                        <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                                        <img src="{% static 'assets/images/goft/photo17066897563.jpg' %}" alt="">
+                                    </div>
+                                    <div class="episode-content">
+                                        <h4><a href="#">خاطره بی‌نام: ۴</a></h4>
+                                        <div class="episode-meta">
+                                            <ul>
+                                                <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
+                                                <li><i class="far fa-calendar-alt"></i>۲۰ تیر , ۱۴۰۳</li>
+                                            </ul>
+                                        </div>
+                                        <p>
+                                            خاطره به زبان ترکی آذری است به همراه برگردان فارسی.
+                                        </p>
+                                        <p>#اجتماعی #دهه_۱۳۵۰ #زنجان_شاهداغ #خانه‌دار #نقل‌_مستقیم #واکسیناسیون</p>
+
+                                        <div class="episode-bottom">
+                                            <div class="episode-host">
+                                                <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
+                                            </div>
+                                            <div class="episode-player">
+                                                <button type="button" class="player-btn amplitude-play-pause"
+                                                    data-song-add="11">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="episode-item">
+                                    <div class="episode-img">
+                                        <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                                        <img src="{% static 'assets/images/goft/photo17066913715.jpg' %}" alt="">
+                                    </div>
+                                    <div class="episode-content">
+                                        <h4><a href="#">خاطره بی‌نام: ۵</a></h4>
+                                        <div class="episode-meta">
+                                            <ul>
+                                                <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
+                                                <li><i class="far fa-calendar-alt"></i>۲۰ تیر , ۱۴۰۳</li>
+                                            </ul>
+                                        </div>
+                                        <p>
+                                            «نمی‌دونستم کجا برم، کدام کوچه برم، کسی هم در باز نمی‌کرد و پناه نمی‌داد!»
+                                        </p>
+                                        <p>#اجتماعی #دهه_۱۳۷۰ #لردگان #روحانی #نقل_مستقیم #تبلیغ</p>
+
+                                        <div class="episode-bottom">
+                                            <div class="episode-host">
+                                                <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
+                                            </div>
+                                            <div class="episode-player">
+                                                <button type="button" class="player-btn amplitude-play-pause"
+                                                    data-song-add="12">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="episode-item">
+                                    <div class="episode-img">
+                                        <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                                        <img src="{% static 'assets/images/goft/photo17066913715.jpg' %}" alt="">
+                                    </div>
+                                    <div class="episode-content">
+                                        <h4><a href="#">خاطره بی‌نام: ۶</a></h4>
+                                        <div class="episode-meta">
+                                            <ul>
+                                                <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
+                                                <li><i class="far fa-calendar-alt"></i>۲۰ تیر , ۱۴۰۳</li>
+                                            </ul>
+                                        </div>
+                                        <p>
+                                            «نمی‌دونستم کجا برم، کدام کوچه برم، کسی هم در باز نمی‌کرد و پناه نمی‌داد!»
+                                        </p>
+                                        <p>#اجتماعی #دهه_۱۳۷۰ #لردگان #روحانی #نقل_مستقیم #تبلیغ</p>
+
+                                        <div class="episode-bottom">
+                                            <div class="episode-host">
+                                                <h6><i class="far fa-user-tie-hair"></i>توسط نیکی کریمی</h6>
+                                            </div>
+                                            <div class="episode-player">
+                                                <button type="button" class="player-btn amplitude-play-pause"
+                                                    data-song-add="13">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagination-area mt-50">
+                        <div aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">۱</a></li>
+                                <li class="page-item"><a class="page-link" href="#">۲</a></li>
+                                <li class="page-item"><span class="page-link">...</span></li>
+                                <li class="page-item"><a class="page-link" href="#">۱۰</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

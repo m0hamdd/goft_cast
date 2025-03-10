@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+
+    <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/photo17166891664.jpg' %}')">
+        <div class="container">
+            <h2 class="breadcrumb-title">تایید شماره موبایل</h2>
+            <ul class="breadcrumb-menu">
+                <li><a href="{% url 'home:index' %}">خانه</a></li>
+                <li class="active">ثبت نام</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="auth-area py-80">
+        <div class="container">
+            <form id="contact-form" class="contact-form" method="post">
+            {% csrf_token %}
+                <div class="messages"></div>
+                <div class="col-md-5 col-lg-4 mx-auto">
+                    <div class="auth-wrap">
+                        <div class="auth-form">
+                            <form action="#">
+                                <div class="form-group">
+                                    <label>رمز عبور</label>
+                                    <input type="password" name="vertifycode" id="vertifycode" class="form-control" placeholder="کد تایید ارسال شده به شماره خود را وارد کنید"
+                                    required="required" data-error="نوشتن نام الزامی است">
+                                </div>
+                                <div class="auth-check">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="agree">
+                                        <label class="form-check-label" for="agree">
+                                            من با <a href="#">شرایط خدمات</a> موافقم
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="auth-btn">
+                                    <button type="submit" class="theme-btn"><span class="far fa-paper-plane"></span>ادامه</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

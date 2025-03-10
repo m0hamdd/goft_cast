@@ -1,0 +1,567 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}وب اپلیکیشن گفت - Gofttt {% endblock %}">
+    <meta name="keywords" content="">
+
+    <title>وب اپلیکیشن گفت - Gofttt</title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/gicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all-fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/feather.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/amplitude.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+
+    <style>
+        .category-img {  
+            position: relative; /* موقعیت را برای لایه پوشش‌دهنده تعیین می‌کند */  
+        }  
+        
+        .overlay {  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 100%;  
+            background: rgba(0, 0, 0, 0.5); /* پس‌زمینه نیمه‌تاریک */  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            opacity: 0; /* لایه پوشش‌دهنده به صورت پیش‌فرض نامرئی است */  
+            transition: opacity 0.3s; /* انیمیشن نرم برای تغییر شفافیت */  
+        }  
+        
+        .category-item:hover .overlay {  
+            opacity: 1; /* با هاور کردن بر روی آیکن، لایه پوشش‌دهنده نمایش داده می‌شود */  
+        }  
+        
+        .overlay-text {  
+            color: rgb(171, 223, 38); /* رنگ متن */  
+            font-size: 1.5em; /* اندازه متن */  
+            text-align: center; /* متن در وسط قرار می‌گیرد */  
+        }  
+    </style>
+
+    <style>  
+        .custom-cursor {
+            z-index: 9999; /* اطمینان از اینکه بالای سایر عناصر قرار گیرد */  
+            position: fixed; /* موقعیت ثابت برای دنبال کردن ماوس */  
+            width: 20px; /* عرض نشانگر */  
+            height: 20px; /* ارتفاع نشانگر */  
+            border: 2px solid var(--theme-color); /* رنگ و استایل مرز */  
+            border-radius: 50%; /* دایره‌ای بودن نشانگر */  
+            pointer-events: none; /* جلوگیری از ایجاد تداخل با سایر عناصر */  
+            transform: translate(-50%, -50%); /* جابجایی برای قرارگیری صحیح */  
+            transition: background-color 0.3s; /* افزودن انتقال نرم */  
+            background-color: rgba(115, 143, 56, 0.7); /* رنگ پس‌زمینه نشانگر */  
+        }  
+
+        .custom-cursor:hover {  
+            background-color: rgba(255, 0, 0, 0.7); /* تغییر رنگ نشانگر هنگام هاور */  
+        }  
+    </style>
+
+</head>
+
+<body class="home" dir="rtl">
+
+    <div class="preloader d-none">
+        <div class="loader-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <header class="header">
+        <div class="main-navigation">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container position-relative">
+                    <a class="navbar-brand" href="{% url 'home:index' %}">
+                        <img src="{% static 'assets/images/goft2.png' %}" class="logo-display" alt="logo" width="#" height="#">
+                        <img src="{% static 'assets/images/goft2.png' %}" class="logo-scrolled" alt="logo">
+                    </a>
+
+                    <div class="mobile-menu-right">
+                        <div class="nav-search-wrap">
+                            <div class="search-btn">
+                                <button type="button" class="nav-right-link search-box-outer"><i
+                                        class="feather-search"></i></button>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-mobile-icon"><i class="feather-menu"></i></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'home:index' %}">خانه</a></li>
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="{% url 'home:index' %}" data-bs-toggle="dropdown">خانه</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="{% url 'home:index' %}">خانه صفحه یک</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'home:index' %}">خانه صفحه دو</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'home:index' %}">خانه صفحه سه</a></li>
+                                </ul>
+                            </li> -->
+                            <!-- <li class="nav-item dropdown"> -->
+                                <li class="nav-item"><a class="nav-link" href="{% url 'memory:episode-grid' %}">گفت‌کست</a></li>
+                                <!-- <ul class="dropdown-menu fade-down"> -->
+                                    <!-- <li><a class="dropdown-item" href="episode-grid.html">اپیسود دسته ای</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="{% url 'memory:episodelist' %}">اپیسود لیست</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="episode-audio.html">اپیسود صدا</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="episode-video.html">اپیسود ویدیو</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="episode-single.html">اپیسود تک</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="show.html">ویدیو ها</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="show-single.html">ویدیو تک</a></li> -->
+                                <!-- </ul> -->
+                            <!-- </li> -->
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#"   data-bs-toggle="dropdown">دسته‌بندی</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="{% url 'memory:stenadi' %}">خاطرات استنادی</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'memory:bname' %}">خاطرات بی‌نام</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'memory:tarikh'  %}">تاریخ شفاهی</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'memory:sonat'  %}">سنت شفاهی</a></li>
+                                    <!-- <li><a class="dropdown-item" href="episode-single.html">اپیسود تک</a></li>
+                                    <li><a class="dropdown-item" href="show.html">ویدیو ها</a></li>
+                                    <li><a class="dropdown-item" href="show-single.html">ویدیو تک</a></li> -->
+                                </ul>
+                            </li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="{% url 'donate:donate' %}">هدیه به ما</a></li>
+        
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="{% url 'donate:donate' %}" data-bs-toggle="dropdown">هدیه به ما</a> -->
+                                <!-- <ul class="dropdown-menu fade-down"> -->
+                                    <!-- <li><a class="dropdown-item" href="{% url 'home:gallery' %}">گالری</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'home:about' %}">درباره ما</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'home:team' %}">تیم ما</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'donate:donate' %}">هدیه به ما</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">میزبان ما</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="{% url 'home:host' %}">میزبان</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'home:host-single' %}">میزبان تک</a></li>
+                                        </ul>
+                                    </li> -->
+                                    <!-- <li><a class="dropdown-item" href="{% url 'payment:price' %}">قیمت ها</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="{% url 'home:sponsor' %}">اسپانسر</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="{% url 'home:faq' %}">سوالات متداول</a></li> -->
+                                    <!-- <li><a class="dropdown-item" href="testimonial.html">گواهینامه ها</a></li> -->
+                                <!-- </ul> -->
+                            <!-- </li> -->
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">وبلاگ</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="blog.html">وبلاگ</a></li>
+                                    <li><a class="dropdown-item" href="blog-single.html">وبلاگ تک</a></li>
+                                </ul>
+                            </li> -->
+                            <li class="nav-item"><a class="nav-link" href="{% url 'memory:makestory' %}">خاطره بگذارید</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'home:contact' %}">تماس با ما</a></li>
+                        </ul>
+                        <div class="nav-right">
+                            <div class="search-btn">
+                                <button type="button" class="nav-right-link search-box-outer"><i
+                                        class="feather-search"></i></button>
+                            </div>
+                            {% if user.is_authenticated %}
+                            <div class="nav-right-btn">
+                                <a href="{% url 'accounts:user_logout' %}" class="theme-btn"><span class="far fa-wallet"></span>خروج</a>
+                            </div>
+                            <div class="nav-right-btn">
+                                <a href="{% url 'accounts:user_panel' %}" class="theme-btn"><span class="far fa-flag"></span>پنل کاربری</a>
+                            </div>
+                            {% else %}
+                            <div class="nav-right-btn">
+                                <a href="{% url 'accounts:user_login' %}" class="theme-btn"><span class="far fa-wallet"></span>ورود</a>
+                            </div>
+                            <div class="nav-right-btn">
+                                <a href="{% url 'accounts:user_register' %}" class="theme-btn"><span class="far fa-wallet"></span>ثبت نام</a>
+                            </div>
+                            {% endif %}
+                            <div class="sidebar-btn">
+                                <button type="button" class="nav-right-link"><i class="far fa-bars-sort"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="search-popup">
+        <button class="close-search"><span class="far fa-times"></span></button>
+        <form action="#">
+            <div class="form-group">
+                <input type="search" name="search-field" placeholder="اینجا جستجو کنید" required="">
+                <button type="submit"><i class="far fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="sidebar-popup">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <button type="button" class="close-sidebar-popup"><i class="far fa-xmark"></i></button>
+                <div class="sidebar-logo">
+                    <img src="{% static 'assets/images/goft2.png' %}" alt="">
+                </div>
+                <div class="sidebar-about">
+                    <h4>درباره ما</h4>
+                    <p>در «گفت»، ما روایت‌های نانوشته را زنده می‌کنیم.
+                        خاطراتی واقعی، دست اول، از زبان کسانی که آن را زیسته‌اند.</p>
+                </div>
+                <div class="sidebar-contact">
+                    <h4>اطلاعات تماس</h4>
+                    <ul>
+                        <li>
+                            <h6>ایمیل</h6>
+                            <a href="/cdn-cgi/l/email-protection#9ef7f0f8f1defbe6fff3eef2fbb0fdf1f3"><i
+                                    class="far fa-envelope"></i><span class="__cf_email__"
+                                    data-cfemail="20494e464f604558414d504c450e434f4d">[email�&nbsp;protected]</span></a>
+                        </li>
+                        <li>
+                            <h6>شماره</h6>
+                            <a href="tel:+21236547898"><i class="far fa-phone"></i> ۱۱۳۳۲۷۱ ۲۱+</a>
+                        </li>
+                        <li>
+                            <h6>آدرس</h6>
+                            <a href="#"><i class="far fa-location-dot"></i>شیراز، خیابان ارم، نبش کوچه ۱۲</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-social">
+                    <h4>ما را دنبال کنید</h4>
+                    <a href="https://eitaa.com/gofttt_ir"><i class="fab fa-wallet"></i></a>
+                    <a href="https://t.me/Gofttt_ir"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if messages %}
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            {% for message in messages %}
+                <div class="toast align-items-center text-bg-{{ message.tags }} border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            {{ message }}
+                        </div>
+                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="custom-cursor"></div>
+    
+    {% block content %}{% endblock %}
+
+    
+    <footer class="footer-area">
+        <div class="footer-widget">
+            <div class="container">
+                <div class="footer-widget-wrapper pt-80 pb-50">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-widget-box about-us">
+                                <a href="{% url 'home:index' %}" class="footer-logo">
+                                    <img src="{% static 'assets/images/goft2.png' %}" class="logo-dark-mode" alt="">
+                                    <img src="{% static 'assets/images/goft2.png' %}" class="logo-light-mode" alt="">
+                                </a>
+                                <p class="mb-3">
+                                    ما انواع مختلفی از معابر در دسترس داریم، اما اکثریت از آن رنج برده اند
+                                    تغییر با تزریق
+                                </p>
+                                <ul class="footer-social mt-20">
+                                    <!-- <li><a href="#"><i class="fab fa-square-facebook"></i></a></li> -->
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://castbox.fm/vb/775319246"><i class="fab fa-x-twitter"></i></a></li>
+                                    <li><a href="https://open.spotify.com/show/0OWqMvMxGK9kgFmR711OaD"><i class="fab fa-spotify"></i></a></li>
+                                    <li><a href="https://t.me/Gofttt_ir"><i class="fab fa-telegram"></i></a></li>
+                                    <li><a href="https://eitaa.com/gofttt_ir"><i class="fab fa-wallet"></i></a></li>
+                                </ul>
+                                <div class="footer-language">
+                                    <div class="dropdown">
+                                        <a href="#" class="language dropdown-toggle" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <img src="{% static 'assets/images/united-states.png' %}" alt="">
+                                            <span>انگلیسی</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#"><img src="{% static 'assets/images/united-states.png' %}"
+                                                        alt="">انگلیسی</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="{% static 'assets/images/germany.png' %}"
+                                                        alt="">آلمانی</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="{% static 'assets/images/france.png' %}"
+                                                        alt="">فرانسوی</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="{% static 'assets/images/china.png' %}"
+                                                        alt="">چینی</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="{% static 'assets/images/spain.png' %}"
+                                                        alt="">اسپانیایی</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                            <div class="footer-widget-box list">
+                                <h4 class="footer-widget-title">گفت</h4>
+                                <ul class="footer-list">
+                                    <li><a href="{% url 'home:about' %}">درباره ما</a></li>
+                                    <li><a href="testimonial.html">دیدگاه ها</a></li>
+                                    <!-- <li><a href="blog.html">آخرین فعالیت ها</a></li> -->
+                                    <li><a href="{% url 'home:sponsor' %}">اسپانسر ما</a></li>
+                                    <li><a href="terms.html"> استفاده از خدمات</a></li>
+                                    <li><a href="privacy.html">حریم خصوصی</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                            <div class="footer-widget-box list">
+                                <h4 class="footer-widget-title">اکسپلوره</h4>
+                                <ul class="footer-list">
+                                    <li><a href="show.html">ویودیوهای محبوب</a></li>
+                                    <li><a href="episode-grid.html">آخرین اپیسودها</a></li>
+                                    <li><a href="{% url 'home:host' %}">میزبانان محبوب</a></li>
+                                    <li><a href="episode-video.html">ویدیوهای ما</a></li>
+                                    <li><a href="episode-single.html">پلی لیست پادکست ها</a></li>
+                                    <li><a href="{% url 'home:gallery' %}">گالری ما</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                            <div class="footer-widget-box list">
+                                <h4 class="footer-widget-title">انجمن</h4>
+                                <ul class="footer-list">
+                                    <li><a href="{% url 'home:contact' %}">پشتیبانی</a></li>
+                                    <li><a href="{% url 'home:faq' %}">سوالات متداول</a></li>
+                                    <li><a href="{% url 'home:contact' %}">تماس با ما</a></li>
+                                    <!-- <li><a href="blog.html">جدیدترین اخبار</a></li> -->
+                                    <li><a href="{% url 'donate:donate' %}">به ما اهدا کنید</a></li>
+                                    <li><a href="{% url 'accounts:user_register' %}">عضو شوید</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-widget-box list">
+                                <h4 class="footer-widget-title">خبرنامه</h4>
+                                <div class="footer-newsletter">
+                                    <p>برای دریافت آخرین به روز رسانی و اخبار، در خبرنامه ما مشترک شوید</p>
+                                    <div class="subscribe-form">
+                                        <form action="#">
+                                            <input type="email" class="form-control" placeholder="ایمیل آدرس">
+                                            <button class="theme-btn" type="submit">
+                                                عضو شوید<i class="far fa-paper-plane"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 align-self-center">
+                        <p class="copyright-text">
+                            © حق نشر <span id="date"></span> <a href="{% url 'home:index' %}"> گفت </a> کلیه حقوق محفوظ است.
+                        </p>
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <ul class="footer-menu">
+                            <li><a href="{% url 'home:contact' %}">پشتیبانی</a></li>
+                            <li><a href="terms.html">قوانین و مقررات</a></li>
+                            <li><a href="privacy.html">حریم خصوصی</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="main-player">
+        <div class="audio-player">
+            <button type="button" class="audio-player-hide"><i class="far fa-angle-down"></i></button>
+            <div class="player">
+                <div class="player-cover-img">
+                    <img src="{% static 'assets/images/goft/photo17066913715.jpg' %}" alt="cover">
+                </div>
+                <div class="player-content">
+                    <div class="song-meta-data">
+                        <p data-amplitude-song-info="name" class="song-name"></p>
+                        <p data-amplitude-song-info="artist" class="song-artist"></p>
+                    </div>
+                    <div class="player-time-progress">
+                        <div id="progress-container">
+                            <input type="range" class="amplitude-song-slider">
+                            <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+                            <progress id="song-buffered-progress" class="amplitude-buffered-progress"
+                                value="0"></progress>
+                        </div>
+                        <div class="time-container">
+                            <span class="current-time">
+                                <span class="amplitude-current-minutes"></span>:<span
+                                    class="amplitude-current-seconds"></span>
+                            </span>
+                            <div id="player-volume" class="player-volume">
+                                <span id="amplitude-mute" class="amplitude-mute"><i class="fas fa-volume-up"></i></span>
+                                <input type="range" id="volume-slider" max="100" class="amplitude-volume-slider">
+                            </div>
+                            <span class="duration">
+                                <span class="amplitude-duration-minutes"></span>:<span
+                                    class="amplitude-duration-seconds"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle">
+                        <i class="far fa-shuffle"></i>
+                    </div>
+                    <div class="amplitude-prev" id="previous">
+                        <i class="fas fa-backward-step"></i>
+                    </div>
+                    <div class="amplitude-play-pause" id="play-pause">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="amplitude-next" id="next">
+                        <i class="fas fa-forward-step"></i>
+                    </div>
+                    <div class="amplitude-repeat" id="repeat">
+                        <i class="far fa-repeat"></i>
+                    </div>
+                    <div class="player-playlist show-playlist">
+                        <i class="far fa-list-music"></i>
+                    </div>
+                </div>
+
+                <div id="playlist-container">
+                    <div class="playlist-top">
+                        <h6 class="up-next">بعدی</h6>
+                        <button type="button" class="close-playlist"><i class="far fa-xmark"></i></button>
+                    </div>
+
+                    <div class="playlist-content">
+                        <div class="playlist-item">
+                            <div class="playlist-song amplitude-song-container amplitude-play-pause"
+                                data-amplitude-song-index="0">
+                                <img src="{% static 'assets/images/goft/photo17066913715.jpg' %}" alt="">
+                                <div class="playlist-song-meta">
+                                    <span class="playlist-song-name">گفت‌کست قسمت ۱</span>
+                                    <span class="playlist-artist-album">گفت</span>
+                                </div>
+                            </div>
+                            <button type="button" class="playlist-remove" data-remove-id="d1"><i
+                                    class="far fa-xmark"></i></button>
+                        </div>
+                        <div class="playlist-item">
+                            <div class="playlist-song amplitude-song-container amplitude-play-pause"
+                                data-amplitude-song-index="1">
+                                <img src="{% static 'assets/images/02_10.jpg' %}" alt="">
+                                <div class="playlist-song-meta">
+                                    <span class="playlist-song-name">گفت‌کست قسمت ۲</span>
+                                    <span class="playlist-artist-album">گفت</span>
+                                </div>
+                            </div>
+                            <button type="button" class="playlist-remove" data-remove-id="d2"><i
+                                    class="far fa-xmark"></i></button>
+                        </div>
+                        <div class="playlist-item">
+                            <div class="playlist-song amplitude-song-container amplitude-play-pause"
+                                data-amplitude-song-index="2">
+                                <img src="{% static 'assets/images/goft/photo17066913715.jpg' %}" alt="">
+                                <div class="playlist-song-meta">
+                                    <span class="playlist-song-name">گفت‌کست قسمت ۰۲</span>
+                                    <span class="playlist-artist-album">گفت</span>
+                                </div>
+                            </div>
+                            <button type="button" class="playlist-remove" data-remove-id="d3"><i
+                                    class="far fa-xmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll-top">
+        <a href="#" class="scroll-top-icon"><i class="far fa-arrow-up"></i></a>
+        <svg class="scroll-progress-circle" viewBox="0 0 100 100">
+            <circle class="scroll-progress-bg" cx="50" cy="50" r="45"></circle>
+            <circle class="scroll-progress-bar" cx="50" cy="50" r="45"></circle>
+        </svg>
+    </div>
+
+
+    <script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/counter-up.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/amplitude.min.js' %}"></script>
+    <script src="{% static 'assets/js/amplitude-custom.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+            var toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl);
+            });
+            toastList.forEach(toast => toast.show());
+        });
+    </script>
+    
+    <script>  
+        document.addEventListener('mousemove', (e) => {  
+            const cursor = document.querySelector('.custom-cursor');  
+            cursor.style.left = `${e.pageX}px`; // به مکان افقی ماوس متصل می‌شود  
+            cursor.style.top = `${e.pageY}px`; // به مکان عمودی ماوس متصل می‌شود  
+        });  
+    </script>
+
+
+</body>
+
+</html>

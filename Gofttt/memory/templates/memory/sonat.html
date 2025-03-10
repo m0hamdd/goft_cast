@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}وب اپلیکیشن گفت - Gofttt {% endblock %}">
+    <meta name="keywords" content="">
+
+    <title>وب اپلیکیشن گفت - Gofttt</title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/gicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all-fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/feather.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/amplitude.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+
+</head>
+
+<body dir="rtl">
+
+    <div class="preloader d-none">
+        <div class="loader-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <div class="coming-soon py-80" style="background: url('{% static 'assets/images/cooming-soon01.jpg' %}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-xl-6 mx-auto">
+                    <div class="coming-wrap">
+                        <div class="coming-content">
+                            <div class="coming-info">
+                                <h1>به زودی بر میگریم</h1>
+                                <p>
+                                    وب سایت ما در حال ساخت است. ما به زودی با سایت جدید و عالی خود اینجا خواهیم بود،
+                                    مشترک شوید تا مطلع شوید
+                                </p>
+                                <div class="coming-countdown-wrap" dir="ltr" style="    font-family: 'vazir-number';">
+                                    <div data-countdown="2030/01/30" class="coming-countdown"></div>
+                                </div>
+                            </div>
+                            <div class="coming-newsletter-form" >
+                                <form action="#">
+                                    <div class="col-md-8 col-lg-8 col-xl-9 mx-auto">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="ایمیل آدرس را وارد نمایید"
+                                                required="">
+                                            <button type="submit" class="theme-btn"><span
+                                                    class="far fa-paper-plane"></span>عضو شوید</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="coming-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/counter-up.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/amplitude.min.js' %}"></script>
+    <script src="{% static 'assets/js/amplitude-custom.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+# IDE
+.idea
+.vscode
+
+# temp database
+Gofttt/db.sqlite3
+
+# temp files
+Gofttt/media
+
+# cache files
+Gofttt/__pycache__
+Gofttt/*/__pycache__

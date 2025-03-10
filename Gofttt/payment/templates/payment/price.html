@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+
+    <div class="site-breadcrumb" style="background: url('{% static 'assets/images/01.jpg' %}')">
+        <div class="container">
+            <h2 class="breadcrumb-title">قیمت های ما</h2>
+            <ul class="breadcrumb-menu">
+                <li><a href="{% url 'home:index' %}">خانه</a></li>
+                <li class="active">قیمت های ما</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="pricing-area pt-100 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
+                        <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> قیمت ها و پلن ها</span>
+                        <h2 class="site-title">بیایید طرح قیمت گذاری را بدانیم</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="pricing-item wow fadeInUp" data-wow-delay=".25s">
+                        <div class="pricing-shape">
+                            <img src="{% static 'assets/images/04.png' %}" alt="">
+                        </div>
+                        <div class="pricing-header-wrapper">
+                            <div class="pricing-header">
+                                <h5>پلن پایه</h5>
+                                <p>طرح کامل برای کاربران مبتدی.</p>
+                            </div>
+                            <div class="pricing-amount">
+                                <strong>۱,۰۰۰,۰۰۰</strong><span class="pricing-amount-type">/ماهانه</span>
+                            </div>
+                            <p class="pricing-text">
+                                ۳۰ روز گارنتی بازگشت وجه
+                            </p>
+                        </div>
+                        <div class="pricing-btn-wrapper">
+                            <a href="#" class="theme-btn">
+                                ۷ روز رایگان امتحان کنید<i class="fas fa-circle-arrow-left"></i>
+                            </a>
+                        </div>
+                        <div class="pricing-feature">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>حساب عبور ۱۰ کاربر</li>
+                                <li><i class="fas fa-check-circle"></i>تا ۸۰ نمایش پادکست</li>
+                                <li><i class="fas fa-check-circle"></i>۵۰۰۰۰+ ساعت پادکست زنده</li>
+                                <li><i class="fas fa-check-circle"></i>حساب پادکست ممتاز</li>
+                                <li><i class="fas fa-check-circle"></i>دانلود همه پادکست ها</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="pricing-item active wow fadeInDown" data-wow-delay=".25s">
+                        <div class="pricing-shape">
+                            <img src="{% static 'assets/images/04.png' %}" alt="">
+                        </div>
+                        <div class="pricing-header-wrapper">
+                            <div class="pricing-header">
+                                <h5>پلن استاندارد</h5>
+                                <p>طرح کامل برای کاربران استاندارد.</p>
+                            </div>
+                            <div class="pricing-amount">
+                                <strong>۱,۵۰۰,۰۰۰</strong><span class="pricing-amount-type">/ماهانه</span>
+                            </div>
+                            <p class="pricing-text">
+                                ۳۰ روز گارنتی بازگشت وجه
+                            </p>
+                        </div>
+                        <div class="pricing-btn-wrapper">
+                            <a href="#" class="theme-btn">
+                                ۷ روز رایگان امتحان کنید<i class="fas fa-circle-arrow-left"></i>
+                            </a>
+                        </div>
+                        <div class="pricing-feature">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>حساب عبور ۱۰ کاربر</li>
+                                <li><i class="fas fa-check-circle"></i>تا ۸۰ نمایش پادکست</li>
+                                <li><i class="fas fa-check-circle"></i>۵۰۰۰۰+ ساعت پادکست زنده</li>
+                                <li><i class="fas fa-check-circle"></i>حساب پادکست ممتاز</li>
+                                <li><i class="fas fa-check-circle"></i>دانلود همه پادکست ها</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="pricing-item wow fadeInUp" data-wow-delay=".25s">
+                        <div class="pricing-shape">
+                            <img src="{% static 'assets/images/04.png' %}" alt="">
+                        </div>
+                        <div class="pricing-header-wrapper">
+                            <div class="pricing-header">
+                                <h5>پلن پرمیوم</h5>
+                                <p>طرح کامل برای کاربران حرفه ای</p>
+                            </div>
+                            <div class="pricing-amount">
+                                <strong>۳,۰۰۰,۰۰۰</strong><span class="pricing-amount-type">/ماهانه</span>
+                            </div>
+                            <p class="pricing-text">
+                                ۳۰ روز گارنتی بازگشت وجه
+                            </p>
+                        </div>
+                        <div class="pricing-btn-wrapper">
+                            <a href="#" class="theme-btn">
+                                ۷ روز رایگان امتحان کنید<i class="fas fa-circle-arrow-left"></i>
+                            </a>
+                        </div>
+                        <div class="pricing-feature">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>حساب عبور ۱۰ کاربر</li>
+                                <li><i class="fas fa-check-circle"></i>تا ۸۰ نمایش پادکست</li>
+                                <li><i class="fas fa-check-circle"></i>۵۰۰۰۰+ ساعت پادکست زنده</li>
+                                <li><i class="fas fa-check-circle"></i>حساب پادکست ممتاز</li>
+                                <li><i class="fas fa-check-circle"></i>دانلود همه پادکست ها</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

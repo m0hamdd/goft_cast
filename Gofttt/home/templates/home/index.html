@@ -1,0 +1,1483 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+    
+    <!-- بنر اصلی -->
+    <div class="hero-section">
+        <div class="hero-single" style="background-image: url('{% static 'assets/images/goft/banner-main.jpg' %}');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-3">
+                        <!-- <div class="hero-content">
+                            <div class="show-item" dir="rtl">
+                                <div class="show-img"> -->
+                                    <!-- <a href="#" class="show-favourite"><i class="far fa-heart"></i></a> -->
+                                    <!-- <img src="{% static 'assets/images/goft/photo16891619428.jpg' %}" alt="">
+                                </div>
+                                <div class="show-content">
+                                    <h4><a href="#">خاطرات استنادی</a></h4>
+                                    <div class="show-meta">
+                                        <ul>
+                                            <li><a href="#"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                            <li><i class="far fa-podcast"></i> پخش</li>
+                                        </ul>
+                                    </div> -->
+                                    <!-- <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p> -->
+                                <!-- </div>
+                            </div>
+                        </div> -->
+                    </div>                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="hero-content">
+                            <div class="show-item" dir="rtl">
+                                <div class="show-img">
+                                    <!-- <a href="#" class="show-favourite"><i class="far fa-heart"></i></a> -->
+                                    <img src="{% static 'assets/images/goft/photo17536525869.jpg' %}" alt="">
+                                </div>
+                                <div class="show-content" style="text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 20px; border: 2px solid white;">
+                                    <h4><a href="{% url 'memory:stenadi' %}">خاطرات استنادی</a></h4>
+                                    <!-- <div class="show-meta">
+                                        <ul>
+                                            <li><a href="#"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                            <li><i class="far fa-podcast"></i> پخش</li>
+                                        </ul>
+                                    </div> -->
+                                    <!-- <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-3">
+                        <div class="hero-content">
+                            <div class="show-item" dir="rtl">
+                                <div class="show-img">
+                                    <!-- <a href="#" class="show-favourite"><i class="far fa-heart"></i></a> -->
+                                    <img src="{% static 'assets/images/goft/kh2.jpg' %}" alt="">
+                                </div>
+                                <div class="show-content" style="text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 20px; border: 2px solid white;">
+                                    <h4><a href="#">خاطره بگذارید</a></h4>
+                                    <!-- <div class="show-meta">
+                                        <ul>
+                                            <li><a href="#"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                            <li><i class="far fa-podcast"></i> پخش</li>
+                                        </ul>
+                                    </div> -->
+                                    <!-- <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2">
+                        <!-- <div class="hero-content"> -->
+                            <!-- <div class="show-item" dir="rtl">
+                                <a href="#" class="category-item">
+                                    <div class="category-img">
+                                        <img src="{% static 'assets/images/goft/photo17067353154.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category-content">
+                                        <h4>خاطرات استنادی</h4>
+                                        <span><i class="far fa-podcast"></i>۱۲۰ خاطره</span>
+                                    </div>
+                                </a>
+                            </div> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <!-- <div class="hero-content">
+                            <div class="show-item" dir="rtl">
+                                <div class="show-img"> -->
+                                    <!-- <a href="#" class="show-favourite"><i class="far fa-heart"></i></a> -->
+                                    <!-- <img src="{% static 'assets/images/goft/photo16891649298.jpg' %}" alt="">
+                                </div>
+                                <div class="show-content">
+                                    <h4><a href="#">خاطرات بی‌نام</a></h4> -->
+                                    <!-- <div class="show-meta">
+                                        <ul>
+                                            <li><a href="#"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                            <li><i class="far fa-podcast"></i> پخش</li>
+                                        </ul>
+                                    </div> -->
+                                    <!-- <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>                
+    
+                <div class="platform mt-40 wow fadeInUp" data-wow-delay="1.25s">
+                    <div class="platform-content">
+                        <h4>پادکست ما را بشنوید:</h4>
+                        <ul>
+                            <li>
+                                <a href="https://open.spotify.com/show/0OWqMvMxGK9kgFmR711OaD">
+                                    <div class="platform-item">
+                                        <div class="platform-img">
+                                            <img src="{% static 'assets/images/spotify.svg' %}" alt="">
+                                        </div>
+                                        <h5>اسپاتیفای</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://castbox.fm/vb/775319246">
+                                    <div class="platform-item">
+                                        <div class="platform-img">
+                                            <img src="{% static '/assets/images/Castbox_Logo.svg' %}" alt="">
+                                        </div>
+                                        <h5>کست باکس</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="platform-item">
+                                        <div class="platform-img">
+                                            <img src="{% static 'assets/images/apple.svg' %}" alt="">
+                                        </div>
+                                        <h5>اپل</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://shenoto.com/album/podcast/">
+                                    <div class="platform-item">
+                                        <div class="platform-img">
+                                            <img src="{% static 'assets/images/itunes.svg' %}" alt="">
+                                        </div>
+                                        <h5>شنوتو</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="platform-item">
+                                        <div class="platform-img">
+                                            <img src="{% static 'assets/images/soundcloud.svg' %}" alt="">
+                                        </div>
+                                        <h5>ساندکلاد</h5>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- پایان بنر اصلی -->
+    
+
+    <!-- دسته بندی ها -->
+    <div class="main-category bg py-80">
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="site-heading-inline wow fadeInDown" data-wow-delay=".25s">
+                        <div>
+                            <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> دسته بندی
+                                ها</span>
+                            <h2 class="site-title">بیایید خاطرات خود را بررسی کنیم <br> دسته</h2>
+                        </div>
+                        <a href="#" class="theme-btn">مشاهده همه<i class="fas fa-circle-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row wow fadeInUp" data-wow-delay=".25s">
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <a href="{% url 'memory:stenadi' %}" class="category-item">
+                        <div class="category-img">
+                            <img src="{% static 'assets/images/goft/photo17444159640.jpg' %}" alt="">
+                        </div>
+                        <div class="category-content">
+                            <h4>گفت‌کست</h4>
+                            <span><i class="far fa-podcast"></i>۱۲۰ خاطره</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <a href="{% url 'memory:bname' %}" class="category-item">
+                        <div class="category-img">
+                            <img src="{% static 'assets/images/goft/photo17540880520.jpg' %}" alt="">
+                        </div>
+                        <div class="category-content">
+                            <h4>خاطرات بی‌نام</h4>
+                            <span><i class="far fa-podcast"></i>۸۶ خاطره</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <a href="{% url 'memory:delcast' %}" class="category-item">
+                        <div class="category-img">
+                            <img src="{% static 'assets/images/goft/photo17444159686.jpg' %}" alt="">
+                        </div>
+                        <div class="category-content">
+                            <h4>دل کست</h4>
+                            <span><i class="far fa-podcast"></i>۱۱۰ خاطره</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- ردیف دوم با وسط‌چین کردن -->  
+                <div class="row wow fadeInUp justify-content-center" data-wow-delay=".25s">  
+                    <div class="col-md-6 col-lg-4 col-xl-4">  
+                        <a href="{% url 'memory:tarikh'  %}" class="category-item">
+                            <div class="category-img">  
+                                <img src="{% static 'assets/images/goft/gallery/photo17488169643.jpg' %}" alt="">
+                                <div class="overlay">  
+                                    <span class="overlay-text">به زودی</span>  
+                                </div>   
+                            </div>  
+                            <div class="category-content">  
+                                <h4>تاریخ شفاهی</h4>  
+                                <span><i class="far fa-podcast"></i>۴۶ خاطره</span>  
+                            </div>  
+                        </a>  
+                    </div>  
+                    <div class="col-md-6 col-lg-4 col-xl-4">  
+                        <a href="{% url 'memory:tarikh' %}" class="category-item">
+                            <div class="category-img">  
+                                <img src="{% static 'assets/images/goft/photo17533958992.jpg' %}" alt="">
+                                <div class="overlay">  
+                                    <span class="overlay-text">به زودی</span>  
+                                </div>  
+                            </div>  
+                            <div class="category-content">  
+                                <h4>سنت شفاهی</h4>  
+                                <span><i class="far fa-podcast"></i>۴۶ خاطره</span>  
+                            </div>  
+                        </a>  
+                    </div>  
+                </div>  
+                <!-- <div class="col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="category-item">
+                        <div class="category-img">
+                            <img src="{% static 'assets/images/05.jpg' %}" alt="">
+                        </div>
+                        <div class="category-content">
+                            <h4>تکنولوژي</h4>
+                            <span><i class="far fa-podcast"></i>۶۵ پادکست</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="category-item">
+                        <div class="category-img">
+                            <img src="{% static 'assets/images/06.jpg' %}" alt="">
+                        </div>
+                        <div class="category-content">
+                            <h4>پزشکی</h4>
+                            <span><i class="far fa-podcast"></i>۹۵ پادکست</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="category-item">
+                        <div class="category-img">
+                            <img src="{% static 'assets/images/07.jpg' %}" alt="">
+                        </div>
+                        <div class="category-content">
+                            <h4>طنز</h4>
+                            <span><i class="far fa-podcast"></i>۷۶ پادکست</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="category-item">
+                        <div class="category-img">
+                            <img src="{% static 'assets/images/08.jpg' %}" alt="">
+                        </div>
+                        <div class="category-content">
+                            <h4>رشد و توسعه</h4>
+                            <span><i class="far fa-podcast"></i>۳۷ پادکست</span>
+                        </div>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- چطور کار میکنیم -->
+    <div class="about-area py-80 mb-20">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-left wow fadeInLeft" data-wow-delay=".25s">
+                        <div class="about-img">
+                            <div class="about-experience">
+                                <h6>۸۵.۶ هزار</h6>
+                                <p>شنونده</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="img-1">
+                                        <img src="{% static 'assets/images/goft/had2.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="img-2">
+                                        <img src="{% static 'assets/images/goft/had2.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-right wow fadeInRight" data-wow-delay=".25s">
+                        <div class="site-heading mb-3">
+                            <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> هدیه به ما
+                                </span>
+                            <h2 class="site-title">
+                                چگونه میتوان تاریخ مردم را حفظ کرد؟                                 
+                            </h2>
+                        </div> 
+                        <div class="about-content">
+                            <p class="about-text">
+                                «گفت خزانه‌ای از اسناد صوتی است با دسترسی باز و آزاد برای همگان. اگر این خزانه از نظر سرگرمی و یا تولید محتوا برای شما مفید بوده است، در صورت تمایل به تداوم فعالیت آن کمک کنید.»
+                            </p>
+                            <div class="about-item-wrap">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="about-item">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/images/podcast-1.svg' %}" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <h4>خاطرات زنده آنتایم</h4>
+                                                <p>کلمات تصادفی طنز که ظاهری یکسان دارند.</p>
+                                            </div>
+                                        </div>
+                                        <div class="about-item">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/images/podcast.svg' %}" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <h4>بهترین کیفیت صدا</h4>
+                                                <p>کلمات تصادفی طنز که ظاهری یکسان دارند.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="about-list">
+                                            <li class="about-list-item">
+                                                <i class="fas fa-circle-check"></i> خاطرات آنتایم بصورت زنده
+                                            </li>
+                                            <li class="about-list-item">
+                                                <i class="fas fa-circle-check"></i> گوش داده به خاطرات آفلاین
+                                            </li>
+                                            <li class="about-list-item">
+                                                <i class="fas fa-circle-check"></i> بهترین کیفیت صدا
+                                            </li>
+                                            <li class="about-list-item">
+                                                <i class="fas fa-circle-check"></i>همه نوع نمایش خاطره
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-bottom">
+                            <a href="{% url 'donate:donate' %}" class="theme-btn">هدیه دهید<i
+                                    class="fas fa-circle-arrow-left"></i></a>
+                            <div class="about-phone">
+                                <div class="icon"><i class="far fa-headset"></i></div>
+                                <div class="number">
+                                    <span>ارتباط با ما</span>
+                                    <h6><a href="tel:+21236547898"> ۱۲۴۶۲۸ ۲۱+</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نمایش ها -->
+    <div class="show-area bg py-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="site-heading-inline wow fadeInDown" data-wow-delay=".25s">
+                        <div>
+                            <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> نمایش ما</span>
+                            <h2 class="site-title">محبوب ترین گفت‌کست ها</h2>
+                        </div>
+                        <a href="#" class="theme-btn">مشاهده همه<i class="fas fa-circle-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="show-slider owl-carousel owl-theme" dir="ltr">
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891619428.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="#">سربازی، رنج پر رضایت</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/01_4.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست</h6>
+                                <p>۱۹۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="0">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891630169.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="#">گفت‌کست دین مردم: راه رفتن</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> ۵۰ اپیسود</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/02_4.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست</h6>
+                                <p>۲۴۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="1">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891630488.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="{% url 'memory:episode-single' %}">  گفت‌کست از ما بهترون!</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> ۱۵ اپیسود</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/03_3.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست</h6>
+                                <p>۱۵۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="2">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891632943.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="#">گفت‌کست سفر: در غربت</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> ۸۲ اپیسود</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/04_2.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست</h6>
+                                <p>۶۹۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="3">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891633527.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="#">گفت‌کست کودکی: روزگار تنبیه</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> ۵۲ اپیسود</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/05_2.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست</h6>
+                                <p>۲۸۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="4">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891634422.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="#">گفت‌کست ایران: داستان همسایگی شرقی</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> اپیسود ۲۵</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/06_2.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست </h6>
+                                <p>۸۱۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="5">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891635228.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="#">گفت‌کست ملالت: در مدار ادارات</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> اپیسود ۲۱</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند.</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/07_2.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست</h6>
+                                <p>۴۳۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="6">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-item" dir="rtl">
+                    <div class="show-img">
+                        <a href="#" class="show-favourite"><i class="far fa-heart"></i></a>
+                        <img src="{% static 'assets/images/goft/photo16891635558.jpg' %}" alt="">
+                    </div>
+                    <div class="show-content">
+                        <h4><a href="#">گفت‌کست هشت سال: چهره اول</a></h4>
+                        <div class="show-meta">
+                            <ul>
+                                <li><a href="{% url 'donate:donate' %}"><i class="far fa-tag"></i> هدیه به ما</a></li>
+                                <li><i class="far fa-podcast"></i> ۱۲ اپیسود</li>
+                            </ul>
+                        </div>
+                        <p>تغییرات زیادی وجود دارد که اکثر گذرها دچار تغییر شده اند..</p>
+                    </div>
+                    <div class="show-bottom">
+                        <div class="show-host">
+                            <div class="host-img">
+                                <img src="{% static 'assets/images/08_2.jpg' %}" alt="">
+                            </div>
+                            <div class="host-content">
+                                <h6>گفت‌کست</h6>
+                                <p>۱۲۰۰ دنبال کننده</p>
+                            </div>
+                        </div>
+                        <div class="show-player">
+                            <button type="button" class="player-btn amplitude-play-pause" data-song-add="7">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسمت آمار ها -->
+    <div class="counter-area pt-40 pb-40">
+        <div class="container">
+            <div class="row wow fadeInUp" data-wow-delay=".25s">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="counter-box">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/podcast.svg' %}" alt="">
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-content">
+                                <span class="counter" data-count="+" data-to="80" data-speed="3000" style="font-family: 'vazir-number';">۸۰</span>
+                                <span class="counter-unit">هزار</span>
+                            </div>
+                            <h6 class="title">شوندگان</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="counter-box">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/love.svg' %}" alt="">
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-content">
+                                <span class="counter" data-count="+" data-to="900" data-speed="3000"
+                                    style="    font-family: 'vazir-number';">۹۰۰</span>
+                                <span class="counter-unit">هزار</span>
+                            </div>
+                            <h6 class="title">فایل های استنادی</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="counter-box">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/host.svg' %}" alt="">
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-content">
+                                <span class="counter" data-count="+" data-to="150" data-speed="3000"
+                                    style="    font-family: 'vazir-number';">۱۵۰</span>
+                                <span class="counter-unit">+</span>
+                            </div>
+                            <h6 class="title">فایل های گفت‌کست</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="counter-box">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/rate.svg' %}" alt="">
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-content">
+                                <span class="counter" data-count="+" data-to="30" data-speed="3000"
+                                    style="    font-family: 'vazir-number';">۳۰</span>
+                                <span class="counter-unit">+</span>
+                            </div>
+                            <h6 class="title">سال های تجربه</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- اپیسود ها -->
+    <div class="episode-area py-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="site-heading-inline wow fadeInDown" data-wow-delay=".25s">
+                        <div>
+                            <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> اپیسود ما</span>
+                            <h2 class="site-title">پرمخاطب ترین خاطرات</h2>
+                        </div>
+                        <a href="{% url 'memory:episodelist' %}" class="theme-btn">مشاهده همه<i class="fas fa-circle-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 wow fadeInUp" data-wow-delay=".25s">
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                    <div class="episode-item">
+                        <div class="episode-img">
+                            <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                            <img src="{% static 'assets/images/goft/خسروشکیبایی.jpg' %}" alt="">
+                        </div>
+                        <div class="episode-content">
+                            <h4><a href="#">خسروشکیبایی ۱</a></h4>
+                            <div class="episode-meta">
+                            <ul>
+                            <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
+                            <li><i class="far fa-calendar-alt"></i> ۲۰ مرداد ۱۴۰۳</li>
+                            </ul>
+                            </div>
+                            <div class="episode-bottom">
+                            <div class="episode-host">
+                            <h6><i class="far fa-user-tie-hair"></i> توسط لیندا کلارک</h6>
+                                </div>
+                                <div class="episode-player">
+                                    <button type="button" class="player-btn amplitude-play-pause" data-song-add="8">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                    <div class="episode-item">
+                        <div class="episode-img">
+                            <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                            <img src="{% static 'assets/images/goft/حمیدرضا صدر.jpg' %}" alt="">
+                        </div>
+                        <div class="episode-content">
+                            <h4><a href="#">حمیدرضا صدر ۲</a></h4>
+                            <div class="episode-meta">
+                                <ul>
+                                    <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
+                                    <li><i class="far fa-calendar-alt"></i> ۱۰ مرداد ۱۴۰۳</li>
+                                </ul>
+                            </div>
+                            <div class="episode-bottom">
+                                <div class="episode-host">
+                                    <h6><i class="far fa-user-tie-hair"></i> توسط لیندا کلارک</h6>
+                                </div>
+                                <div class="episode-player">
+                                    <button type="button" class="player-btn amplitude-play-pause" data-song-add="9">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                    <div class="episode-item">
+                        <div class="episode-img">
+                            <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                            <img src="{% static 'assets/images/goft/شریعتی.jpg' %}" alt="">
+                        </div>
+                        <div class="episode-content">
+                            <h4><a href="#">شریعتی ۳</a></h4>
+                            <div class="episode-meta">
+                                <ul>
+                                    <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
+                                    <li><i class="far fa-calendar-alt"></i> ۱۲ مرداد ۱۴۰۳</li>
+                                </ul>
+                            </div>
+                            <div class="episode-bottom">
+                                <div class="episode-host">
+                                    <h6><i class="far fa-user-tie-hair"></i> توسط لیندا کلارک</h6>
+                                </div>
+                                <div class="episode-player">
+                                    <button type="button" class="player-btn amplitude-play-pause"
+                                        data-song-add="10">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                    <div class="episode-item">
+                        <div class="episode-img">
+                            <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113961.jpg' %}" alt="">
+                        </div>
+                        <div class="episode-content">
+                            <h4><a href="#">خاطره 1</a></h4>
+                            <div class="episode-meta">
+                                <ul>
+                                    <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
+                                    <li><i class="far fa-calendar-alt"></i> ۱۵ مرداد ۱۴۰۳</li>
+                                </ul>
+                            </div>
+                            <div class="episode-bottom">
+                                <div class="episode-host">
+                                    <h6><i class="far fa-user-tie-hair"></i> توسط لیندا کلارک</h6>
+                                </div>
+                                <div class="episode-player">
+                                    <button type="button" class="player-btn amplitude-play-pause"
+                                        data-song-add="11">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                    <div class="episode-item">
+                        <div class="episode-img">
+                            <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113918.jpg' %}" alt="">
+                        </div>
+                        <div class="episode-content">
+                            <h4><a href="#">خاطره 2</a></h4>
+                            <div class="episode-meta">
+                                <ul>
+                                    <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
+                                    <li><i class="far fa-calendar-alt"></i> ۱۸ مرداد ۱۴۰۳</li>
+                                </ul>
+                            </div>
+                            <div class="episode-bottom">
+                                <div class="episode-host">
+                                    <h6><i class="far fa-user-tie-hair"></i> توسط لیندا کلارک</h6>
+                                </div>
+                                <div class="episode-player">
+                                    <button type="button" class="player-btn amplitude-play-pause"
+                                        data-song-add="12">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                    <div class="episode-item">
+                        <div class="episode-img">
+                            <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113678.jpg' %}" alt="">
+                        </div>
+                        <div class="episode-content">
+                            <h4><a href="#">خاطره 3</a></h4>
+                            <div class="episode-meta">
+                                <ul>
+                                    <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
+                                    <li><i class="far fa-calendar-alt"></i> ۲۱ مرداد ۱۴۰۳</li>
+                                </ul>
+                            </div>
+                            <div class="episode-bottom">
+                                <div class="episode-host">
+                                    <h6><i class="far fa-user-tie-hair"></i> توسط لیندا کلارک</h6>
+                                </div>
+                                <div class="episode-player">
+                                    <button type="button" class="player-btn amplitude-play-pause"
+                                        data-song-add="13">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="choose-area pt-20 pb-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="choose-content wow fadeInUp" data-wow-delay=".25s">
+                        <div class="site-heading mb-3">
+                            <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> چرا ما ؟</span>
+                            <h2 class="site-title">
+                                آسان برای گوش دادن <span>هر زمان</span> و هر جا
+                            </h2>
+                        </div>
+                        <p>
+                            تنوع بسیاری از معابر موجود است، اما اکثر آنها در برخی دچار تغییر شده اند
+                            فرم توسط
+                            کلمات طنز تزریق شده حتی کمی باورپذیر به نظر می رسند. اگر می خواهید از استفاده کنید
+                            باید مطمئن شوید که ژنراتور در اینترنت وجود دارد.
+                        </p>
+                        <div class="choose-item-wrap">
+                            <div class="choose-item">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/offline.svg' %}" alt="">
+                                </div>
+                                <div class="content">
+                                    <h5>به صورت آفلاین به پادکست گوش دهید</h5>
+                                    <p>این یک واقعیت ثابت شده است که حواس خواننده از این موضوع پرت می شود
+                                    محتوای قابل خواندن یک صفحه هنگام مشاهده طرح آن.</p>
+                                </div>
+                            </div>
+                            <div class="choose-item">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/podcast-1.svg' %}" alt="">
+                                </div>
+                                <div class="content">
+                                    <h5>بهترین کیفیت صدا در تمام دوران</h5>
+                                    <p>این یک واقعیت ثابت شده است که حواس خواننده از این موضوع پرت می شود
+                                    محتوای قابل خواندن یک صفحه هنگام مشاهده طرح آن.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-40">
+                            <a href="#" class="theme-btn">شروع گوش دادن<i
+                                    class="fas fa-circle-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="choose-img-wrap">
+                        <div class="choose-img wow fadeInRight" data-wow-delay=".25s">
+                            <img src="{% static 'assets/images/01_5.jpg' %}" alt="">
+                        </div>
+                        <div class="choose-img-shape">
+                            <img src="{% static 'assets/images/03.png' %}" alt="">
+                        </div>
+                        <div class="choose-img-content wow fadeInUp" data-wow-delay=".50s">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> موجود در همه پلتفرم‌ها</li>
+                                <li><i class="fas fa-check-circle"></i> اپیزودهای خود را ضبط کنید</li>
+                                <li><i class="fas fa-check-circle"></i> با مردم بحث کنید</li>
+                                <li><i class="fas fa-check-circle"></i> گوش دادن در موقعیت خاموش صفحه</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="video-area wow fadeInUp" data-wow-delay=".25s">
+        <div class="container">
+            <div class="video-content" style="background-image: url('{% static 'assets/images/h201.jpg' %}');">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <div class="video-wrapper">
+                            <div class="col-lg-6 mx-auto">
+                                <div class="video-info">
+                                    <h1 class="video-title">بیایید آخرین ویدیوی خود را بررسی کنیم</h1>
+                                    <p>این یک واقعیت ثابت شده است که حواس خواننده از این موضوع پرت می شود
+                                    محتوای قابل خواندن یک صفحه با نگاه کردن به طرح آن.</p>
+                                </div>
+                            </div>
+                            <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=ckHzmP1evNU">
+                                <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div style="height: 30px;"></div> -->
+     
+    <!-- <div class="team-area py-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
+                        <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> تیم ما</span>
+                        <h2 class="site-title">ملاقات کنید با  <span>پادکستر ها</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow fadeInUp" data-wow-delay=".25s">
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{% static 'assets/images/01_7.jpg' %}" alt="thumb">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h5><a href="#">آنجلینا ویجی</a></h5>
+                            <span>پادکستر ارشد</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{% static 'assets/images/02_6.jpg' %}" alt="thumb">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h5><a href="#">فرانک میچل</a></h5>
+                            <span>پادکستر ارشد</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{% static 'assets/images/03_5.jpg' %}" alt="thumb">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h5><a href="#">سوسن لونسفرد</a></h5>
+                            <span>مدیر عامل</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{% static 'assets/images/04_4.jpg' %}" alt="thumb">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h5><a href="#">دنیس پروتیت</a></h5>
+                            <span>پادکستر ارشد</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="cta-area">
+        <div class="cta-shape">
+            <img src="{% static 'assets/images/06.png' %}" alt="">
+        </div>
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="cta-content">
+                            <h1 class="wow fadeInUp" data-wow-delay=".25s">پادکست مورد علاقه خود را پیدا کنید و به آن گوش دهید
+                                در شهر</h1>
+                            <p class="wow fadeInUp" data-wow-delay=".50s">این یک واقعیت ثابت است که الف
+                                خواننده با خواندنی ها حواسش پرت خواهد شد
+                                محتوای یک صفحه هنگام مشاهده طرح بندی آن</p>
+                            <a href="#" class="theme-btn wow fadeInUp" data-wow-delay=".75s">شروع کنید<i
+                                    class="fas fa-circle-arrow-left"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="cta-img wow fadeInUp" data-wow-delay=".25s">
+                            <div class="cta-img-shape">
+                                <img src="{% static 'assets/images/05.png' %}" alt="">
+                            </div>
+                            <img src="{% static 'assets/images/01_2.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- قسمت  قیمت ها -->
+    <!-- <div class="cta-area">
+        <div class="cta-shape">
+            <img src="{% static 'assets/images/06.png' %}" alt="">
+        </div>
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="cta-content">
+                            <h1 class="wow fadeInUp" data-wow-delay=".25s">گفت، همراه شما در میان خاطراتی پنهان مانده از یادها</h1>
+                            <p class="wow fadeInUp" data-wow-delay=".50s">از طریق این پلتفرم خاطرات خود را با ما به اشتراک بگذارید!</p>
+                            <a href="{% url 'memory:makestory' %}" class="theme-btn wow fadeInUp" data-wow-delay=".75s">شروع کنید<i
+                                    class="fas fa-circle-arrow-left"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="cta-img wow fadeInUp" data-wow-delay=".25s">
+                            <div class="cta-img-shape">
+                                <img src="{% static 'assets/images/05.png' %}" alt="">
+                            </div>
+                            <img src="{% static 'assets/images/01_2.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- همکاری ها -->
+    <!-- <div class="partner-area bg pt-50 pb-50" dir="ltr">
+        <div class="container">
+            <div class="partner-wrapper">
+                <div class="partner-slider owl-carousel owl-theme wow fadeInUp" data-wow-delay=".25s">
+                    <img src="{% static 'assets/images/goft/images-2.png' %}" alt="thumb">
+                    <img src="{% static 'assets/images/02.png' %}" alt="thumb">
+                    <img src="{% static 'assets/images/03_1.png' %}" alt="thumb">
+                    <img src="{% static 'assets/images/04_1.png' %}" alt="thumb">
+                    <img src="{% static 'assets/images/05_1.png' %}" alt="thumb">
+                    <img src="{% static 'assets/images/03_1.png' %}" alt="thumb">
+                    <img src="{% static 'assets/images/02.png' %}" alt="thumb">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- قسمت دیدگاه -->
+    <div class="testimonial-area bg pt-60 pb-60">
+        <div class="testimonial-bg" >
+            <img src="{% static 'assets/images/bg.jpg' %}" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="site-heading wow fadeInDown" data-wow-delay=".25s" >
+                        <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> دیدگاه ها</span>
+                        <h2 class="site-title">کاربران در مورد را چه میگویند</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 wow fadeInUp" data-wow-delay=".25s" dir="ltr" style="margin-left: auto;">
+                <div class="testimonial-slider owl-carousel owl-theme">
+                    <div class="testimonial-item" dir="rtl">
+                        <div class="testimonial-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            <p>
+                                انواع مختلفی از معابر موجود است، اما اکثریت آن ها آسیب دیده اند
+                                تغییر
+                                در برخی از واقعیت های ثابت شده که اکثریت دچار تغییر شده اند.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="{% static 'assets/images/01_8.jpg' %}" alt="">
+                            </div>
+                            <div class="author-info">
+                                <h4>دانیال حکیمی</h4>
+                                <p>کاربر</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <img src="{% static 'assets/images/quote.svg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="testimonial-item" dir="rtl">
+                        <div class="testimonial-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            <p>
+                                انواع مختلفی از معابر موجود است، اما اکثریت آن ها آسیب دیده اند
+                                تغییر
+                                در برخی از واقعیت های ثابت شده که اکثریت دچار تغییر شده اند.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="{% static 'assets/images/02_7.jpg' %}" alt="">
+                            </div>
+                            <div class="author-info">
+                                <h4>امین حیایی</h4>
+                                <p>کاربر</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <img src="{% static 'assets/images/quote.svg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="testimonial-item" dir="rtl">
+                        <div class="testimonial-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            <p>
+                                انواع مختلفی از معابر موجود است، اما اکثریت آن ها آسیب دیده اند
+                                تغییر
+                                در برخی از واقعیت های ثابت شده که اکثریت دچار تغییر شده اند.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="{% static 'assets/images/03_6.jpg' %}" alt="">
+                            </div>
+                            <div class="author-info">
+                                <h4>اکبر عبدی</h4>
+                                <p>کاربر</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <img src="{% static 'assets/images/quote.svg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="testimonial-item" dir="rtl">
+                        <div class="testimonial-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            <p>
+                                انواع مختلفی از معابر موجود است، اما اکثریت آن ها آسیب دیده اند
+                                تغییر
+                                در برخی از واقعیت های ثابت شده که اکثریت دچار تغییر شده اند.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="{% static 'assets/images/04_5.jpg' %}" alt="">
+                            </div>
+                            <div class="author-info">
+                                <h4>محمد زمانی</h4>
+                                <p>کاربر</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <img src="{% static 'assets/images/quote.svg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="testimonial-item" dir="rtl">
+                        <div class="testimonial-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">
+                            <p>
+                                انواع مختلفی از معابر موجود است، اما اکثریت آن ها آسیب دیده اند
+                                تغییر
+                                در برخی از واقعیت های ثابت شده که اکثریت دچار تغییر شده اند.
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="{% static 'assets/images/05_4.jpg' %}" alt="">
+                            </div>
+                            <div class="author-info">
+                                <h4>محسن دادار</h4>
+                                <p>کابر</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <img src="{% static 'assets/images/quote.svg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- بروز ترین ها -->
+    <div class="blog-area py-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
+                        <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> رویداد ها</span>
+                        <h2 class="site-title">جدیدترین اخبار و رویداد های گفت</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
+                        <div class="blog-img">
+                            <img src="{% static 'assets/images/goft/4181577.jpg' %}" alt="Thumb">
+                            <div class="blog-date"><i class="fal fa-calendar-alt"></i>  ۲۵ مرداد, ۱۴۰۳ </div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li><a href="#"><i class="far fa-user"></i> توسط محسن دادار</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> ۳ دیدگاه</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="blog-title">
+                                <a href="#">تغییرات زیادی وجود دارد که در این مورد وجود دارد.</a>
+                            </h4>
+                            <p>
+                            انواع مختلفی از معابر وجود دارد که اکثر آنها به نوعی دچار تغییر شده اند
+                            با تزریق
+                            </p>
+                            <a class="theme-btn" href="#">بیشتر بخوانید<i class="fas fa-circle-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
+                        <div class="blog-img">
+                            <img src="{% static 'assets/images/goft/172415278174565400.jpg' %}" alt="Thumb">
+                            <div class="blog-date"><i class="fal fa-calendar-alt"></i>  ۵ مرداد, ۱۴۰۳ </div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li><a href="#"><i class="far fa-user"></i> توسط محسن دادار</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> ۵ دیدگاه</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="blog-title">
+                                <a href="#">برخلاف تصور رایج، قطعه تصادفی کلاسیک است.</a>
+                            </h4>
+                            <p>
+                            انواع مختلفی از معابر وجود دارد که اکثر آنها به نوعی دچار تغییر شده اند
+                            با تزریق
+                            </p>
+                            <a class="theme-btn" href="#">بیشتر بخوانید<i class="fas fa-circle-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
+                        <div class="blog-img">
+                            <img src="{% static 'assets/images/goft/4181577.jpg' %}" alt="Thumb">
+                            <div class="blog-date"><i class="fal fa-calendar-alt"></i>  ۱۰ مرداد, ۱۴۰۳ </div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li><a href="#"><i class="far fa-user"></i> توسط محسن دادار</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> ۶ دیدگاه</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="blog-title">
+                                <a href="#">این همه تصور اشتباه در تقبیح لذت و ستایش درد.</a>
+                            </h4>
+                            <p>
+                            انواع مختلفی از معابر وجود دارد که اکثر آنها به نوعی دچار تغییر شده اند
+                            با تزریق
+                            </p>
+                            <a class="theme-btn" href="#">بیشتر بخوانید<i class="fas fa-circle-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instagram-area" dir="ltr">
+        <div class="container-fluid px-0">
+            <div class="instagram-wrap">
+                <div class="instagram-slider owl-carousel owl-theme">
+                    <div class="instagram-item">
+                        <div class="instagram-img">
+                            <img src="{% static 'assets/images/goft/gallery/photo17473112175.jpg' %}" alt="Thumb">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="instagram-img">
+                            <img src="{% static 'assets/images/goft/gallery/photo17473114265.jpg' %}" alt="Thumb">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="instagram-img">
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113038.jpg' %}" alt="Thumb">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="instagram-img">
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113076.jpg' %}" alt="Thumb">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="instagram-img">
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113918.jpg' %}" alt="Thumb">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="instagram-img">
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113485.jpg' %}" alt="Thumb">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="instagram-img">
+                            <img src="{% static 'assets/images/goft/gallery/photo17473113678.jpg' %}" alt="Thumb">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

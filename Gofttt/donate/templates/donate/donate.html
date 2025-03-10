@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+
+    <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/Untitled-1.jpg' %}')">
+        <div class="container">
+            <h2 class="breadcrumb-title">هدیه ما</h2>
+            <ul class="breadcrumb-menu">
+                <li><a href="{% url 'home:index' %}">خانه</a></li>
+                <li class="active">هدیه ما</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="donate-area py-100">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="donate-img">
+                        <img src="{% static 'assets/images/goft/donate-us.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="donate-content">
+                        <h1>کمک مالی خود را انجام دهید</h1>
+                        <p>انواع مختلفی از معابر موجود است، اما اکثر آنها دچار تغییر شده اند
+                            در برخی
+                            با استفاده از کلمات طنز تزریق شده که حتی کمی باورپذیر به نظر نمی رسند.
+                            اگر می خواهید از یک پاساژ استفاده کنید، باید مطمئن شوید که وجود ندارد
+                            هر چیز شرم آور پنهان در وسط متن.</p>
+                    {% if user.is_authenticated %}
+                        <div class="donate-form">
+                            <h5>میزان</h5>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="far fa-dollar"></i></span>
+                                    <input type="text" class="form-control" name="amount" placeholder="میزان را وارد کنید"
+                                        required="">
+                                </div>
+                                <div class="mb-4">
+                                    <select name="currency" id="currency" class="form-control w-100 text-center">  
+                                        <option value="IRR">تومان (IRR)</option>  
+                                        <option value="USD">دلار ($)</option>  
+                                        <option value="EUR">یورو (€)</option>  
+                                        <option value="GBP">پوند (£)</option>  
+                                        <option value="IQD">دینار عراق (IQD)</option>  
+                                        <option value="TRY">لیر (₺)</option>  
+                                    </select>
+                                </div>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" value="" id="agree">
+                                    <label class="form-check-label" for="agree">
+                                        من ترجیح می دهم این کمک مالی را به صورت ناشناس انجام دهم.
+                                    </label>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <button type="submit" class="theme-btn">ارسال هدیه<i
+                                            class="fas fa-circle-arrow-left"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    {% else %}
+                        <div style="border-top: 1px solid #ccc; padding-top: 20px; margin-top: 20px;">  
+                            <h6>برای حمایت کردن ابتدا وارد حساب کاربری خود شوید</h6>  
+                            <p class="mt-2">  
+                                <a href="{% url 'accounts:user_login' %}" class="btn btn-danger btn-sm">ورود به حساب کاربری</a>  
+                            </p>  
+                            <p class="mt-2">  
+                                حساب ندارید؟ <a href="{% url 'accounts:user_register' %}" class="btn btn-secondary btn-sm">ثبت نام کنید.</a>  
+                            </p>  
+                        </div>  
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
