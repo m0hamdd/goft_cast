@@ -7,10 +7,10 @@
 
     <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/photo17166891664.jpg' %}')">
         <div class="container">
-            <h2 class="breadcrumb-title">میزبان تک</h2>
+            <h2 class="breadcrumb-title">صفحه کاربری</h2>
             <ul class="breadcrumb-menu">
                 <li><a href="{% url 'home:index' %}">خانه</a></li>
-                <li class="active">میزبان تک</li>
+                <li class="active">صفحه کاربری</li>
             </ul>
         </div>
     </div>
@@ -22,21 +22,22 @@
                 <div class="col-lg-4 col-xl-3">
                     <div class="team-sidebar">
                         <div class="team-sidebar-img">
-                            <img src="{% static 'assets/images/goft/had2.jpg' %}" alt="">
+                            <img src="{{ user.profile_image.url }}" alt="Profile Image"
+                                onerror="this.onerror=null; this.src='/media/profile_images/download.png';">
                         </div>
                         <div class="team-sidebar-name">
-                            <h4 class="name"><a href="#">دکتر شریعتی</a></h4>
-                            <h6 class="username"><a href="#">@niki2321</a></h6>
+                            <h4 class="name"><a href="#">{{ user.full_name }}</a></h4>
+                            <h6 class="username"><a href="#">{{ user.username }}</a></h6>
                             <div class="meta">
-                                <span><b>۵۰۲۵۰</b> دنبال کننده</span>
-                                <span><b>۲۰۳۹۰</b> دنبال شد</span>
+                                <!-- <span><b>۵۰</b> دنبال کننده</span>
+                                <span><b>۲۰</b> دنبال شد</span> -->
                             </div>
                         </div>
-                        <div class="team-sidebar-about">
+                        <!-- <div class="team-sidebar-about">
                             <p>انواع مختلفی از پاساژهای لورم اپسون موجود است، اما اکثریت آن را دارند
                                 رنج برد.</p>
-                        </div>
-                        <div class="team-sidebar-info">
+                        </div> -->
+                        <!-- <div class="team-sidebar-info">
                             <div class="info-item">
                                 <span>نمایش</span>
                                 <h6>۲۵+</h6>
@@ -49,12 +50,13 @@
                                 <span>قسمت</span>
                                 <h6>۲۵۰+</h6>
                             </div>
-                        </div>
+                        </div> -->
+                        <hr>
                         <div class="team-sidebar-link">
                             <ul>
-                                <li><i class="far fa-location-dot"></i>فارس, شیراز</li>
-                                <li><i class="far fa-globe"></i><a href="#">https://rtl.com</a></li>
-                                <li><i class="far fa-calendar-days"></i> ۱۴۰۳ ملحق شده</li>
+                                <li><i class="far fa-location-dot"></i>ایران، تهران</li>
+                                <li><i class="far fa-globe"></i><a href="#">{{ user.email }}</a></li>
+                                <li><i class="far fa-calendar-days"></i>{{ user.date_joined }}</li>
                             </ul>
                         </div>
                         <div class="team-sidebar-social">
@@ -67,7 +69,7 @@
                         <div class="team-sidebar-btn">
                             <a href="#" class="theme-btn theme-btn2"><span
                                     class="far fa-comment-dots"></span>پیام</a>
-                            <a href="#" class="theme-btn"><span class="far fa-user-plus"></span>دنبال کردن</a>
+                            <a href="{% url 'accounts:edit_profile' %}" class="theme-btn"><span class="far fa-user-plus"></span>ویرایش پروفایل</a>
                         </div>
                     </div>
                 </div>
@@ -77,12 +79,12 @@
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-tab1" data-bs-toggle="pill"
                                     data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1"
-                                    aria-selected="true"><i class="far fa-podcast"></i>ویدیو</button>
+                                    aria-selected="true"><i class="far fa-podcast"></i>خاطرات</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-tab2" data-bs-toggle="pill"
                                     data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2"
-                                    aria-selected="false"><i class="far fa-microphone-lines"></i>قسمت ها</button>
+                                    aria-selected="false"><i class="far fa-microphone-lines"></i>دل‌کست ها</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-tab3" data-bs-toggle="pill"
@@ -101,7 +103,7 @@
                                 aria-labelledby="pills-tab1" tabindex="0">
                                 <div class="team-single-tab">
                                     <div class="row g-4">
-                                        <div class="col-md-6 col-lg-4">
+                                        <!-- <div class="col-md-6 col-lg-4">
                                             <div class="show-item">
                                                 <div class="show-img">
                                                     <a href="#" class="show-favourite"><i
@@ -216,123 +218,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single04.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">رشد کسب و کار</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> بیزینس</a>
-                                                            </li>
-                                                            <li><i class="far fa-podcast"></i> بخش ۸۵</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/02.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>ادوارد مونسو</h6>
-                                                            <p>۶۹۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="3">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single05.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">زمینه های خود را ارزیابی کنید</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> رشد انسانی</a></li>
-                                                            <li><i class="far fa-podcast"></i> ۴۲ قسمت</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/01.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>لیلی زنکدگانی</h6>
-                                                            <p>۲۷۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="4">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single06.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">ساخت پادکست یونیک</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> کمدی</a>
-                                                            </li>
-                                                            <li><i class="far fa-podcast"></i> قسمت ۶۷</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/02.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>محسن دادار</h6>
-                                                            <p>۸۱۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="5">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <div class="pagination-area mt-50">
@@ -366,7 +252,7 @@
                                 tabindex="0">
                                 <div class="team-single-tab">
                                     <div class="row g-4">
-                                        <div class="col-md-12 col-lg-6">
+                                        <!-- <div class="col-md-12 col-lg-6">
                                             <div class="episode-item">
                                                 <div class="episode-img">
                                                     <a href="#" class="episode-favourite"><i
@@ -461,103 +347,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-12 col-lg-6">
-                                            <div class="episode-item">
-                                                <div class="episode-img">
-                                                    <a href="#" class="episode-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/04_2.jpg' %}" alt="">
-                                                </div>
-                                                <div class="episode-content">
-                                                    <h4><a href="#">ذهنیت در زندگی ما بخش : ۴</a></h4>
-                                                    <div class="episode-meta">
-                                                        <ul>
-                                                            <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
-                                                            <li><i class="far fa-calendar-alt"></i> ۲۰ مرداد , ۱۴۰۳
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="episode-bottom">
-                                                        <div class="episode-host">
-                                                            <h6><i class="far fa-user-tie-hair"></i> توسط رضا زمانی
-                                                            </h6>
-                                                        </div>
-                                                        <div class="episode-player">
-                                                            <button type="button"
-                                                                class="player-btn amplitude-play-pause"
-                                                                data-song-add="11">
-                                                                <i class="fas fa-play"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-lg-6">
-                                            <div class="episode-item">
-                                                <div class="episode-img">
-                                                    <a href="#" class="episode-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/05_2.jpg' %}" alt="">
-                                                </div>
-                                                <div class="episode-content">
-                                                    <h4><a href="#">ذهنیت در زندگی ما بخش : ۵</a></h4>
-                                                    <div class="episode-meta">
-                                                        <ul>
-                                                            <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
-                                                            <li><i class="far fa-calendar-alt"></i> ۲۰ مرداد , ۱۴۰۳
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="episode-bottom">
-                                                        <div class="episode-host">
-                                                            <h6><i class="far fa-user-tie-hair"></i> توسط رضا زمانی
-                                                            </h6>
-                                                        </div>
-                                                        <div class="episode-player">
-                                                            <button type="button"
-                                                                class="player-btn amplitude-play-pause"
-                                                                data-song-add="12">
-                                                                <i class="fas fa-play"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-lg-6">
-                                            <div class="episode-item">
-                                                <div class="episode-img">
-                                                    <a href="#" class="episode-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/06_2.jpg' %}" alt="">
-                                                </div>
-                                                <div class="episode-content">
-                                                    <h4><a href="#">ذهنیت در زندگی ما بخش : ۶</a></h4>
-                                                    <div class="episode-meta">
-                                                        <ul>
-                                                            <li><i class="far fa-podcast"></i> قسمت ۱۸</li>
-                                                            <li><i class="far fa-calendar-alt"></i> ۲۰ مرداد , ۱۴۰۳
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="episode-bottom">
-                                                        <div class="episode-host">
-                                                            <h6><i class="far fa-user-tie-hair"></i> توسط رضا زمانی
-                                                            </h6>
-                                                        </div>
-                                                        <div class="episode-player">
-                                                            <button type="button"
-                                                                class="player-btn amplitude-play-pause"
-                                                                data-song-add="13">
-                                                                <i class="fas fa-play"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <div class="pagination-area mt-50">
@@ -591,7 +381,7 @@
                                 tabindex="0">
                                 <div class="team-single-tab">
                                     <div class="row g-4">
-                                        <div class="col-md-6 col-lg-4">
+                                        <!-- <div class="col-md-6 col-lg-4">
                                             <div class="show-item">
                                                 <div class="show-img">
                                                     <a href="#" class="show-favourite"><i
@@ -706,123 +496,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single04.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">رشد کسب و کار</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> بیزینس</a>
-                                                            </li>
-                                                            <li><i class="far fa-podcast"></i> بخش ۸۵</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/02.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>ادوارد مونسو</h6>
-                                                            <p>۶۹۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="3">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single05.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">زمینه های خود را ارزیابی کنید</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> رشد انسانی</a></li>
-                                                            <li><i class="far fa-podcast"></i> ۴۲ قسمت</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/01.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>لیلی زنکدگانی</h6>
-                                                            <p>۲۷۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="4">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single06.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">ساخت پادکست یونیک</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> کمدی</a>
-                                                            </li>
-                                                            <li><i class="far fa-podcast"></i> قسمت ۶۷</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/02.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>محسن دادار</h6>
-                                                            <p>۸۱۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="5">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <div class="pagination-area mt-50">
@@ -856,7 +530,7 @@
                                 tabindex="0">
                                 <div class="team-single-tab">
                                     <div class="row g-4">
-                                        <div class="col-md-6 col-lg-4">
+                                        <!-- <div class="col-md-6 col-lg-4">
                                             <div class="show-item">
                                                 <div class="show-img">
                                                     <a href="#" class="show-favourite"><i
@@ -971,123 +645,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single04.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">رشد کسب و کار</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> بیزینس</a>
-                                                            </li>
-                                                            <li><i class="far fa-podcast"></i> بخش ۸۵</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/02.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>ادوارد مونسو</h6>
-                                                            <p>۶۹۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="3">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single05.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">زمینه های خود را ارزیابی کنید</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> رشد انسانی</a></li>
-                                                            <li><i class="far fa-podcast"></i> ۴۲ قسمت</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/01.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>لیلی زنکدگانی</h6>
-                                                            <p>۲۷۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="4">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4">
-                                            <div class="show-item">
-                                                <div class="show-img">
-                                                    <a href="#" class="show-favourite"><i
-                                                            class="far fa-heart"></i></a>
-                                                    <img src="{% static 'assets/images/host-single06.jpg' %}" alt="">
-                                                </div>
-                                                <div class="show-content">
-                                                    <h4><a href="#">ساخت پادکست یونیک</a></h4>
-                                                    <div class="show-meta">
-                                                        <ul>
-                                                            <li><a href="#"><i class="far fa-tag"></i> کمدی</a>
-                                                            </li>
-                                                            <li><i class="far fa-podcast"></i> قسمت ۶۷</li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>تغییرات زیادی وجود دارد که اکثریت عبور از آن رنج برده اند
-                                                        تغییر.</p>
-                                                </div>
-                                                <div class="show-bottom">
-                                                    <div class="show-host">
-                                                        <div class="host-img">
-                                                            <img src="{% static 'assets/images/02.jpg' %}" alt="">
-                                                        </div>
-                                                        <div class="host-content">
-                                                            <h6>محسن دادار</h6>
-                                                            <p>۸۱۰۰ دنبال کننده</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="show-player">
-                                                        <button type="button"
-                                                            class="player-btn amplitude-play-pause"
-                                                            data-song-add="5">
-                                                            <i class="fas fa-play"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <div class="pagination-area mt-50">

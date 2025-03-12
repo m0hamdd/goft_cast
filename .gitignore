@@ -1,17 +1,14 @@
 # IDE
 .idea
 .vscode
+/env1
 .idea/
-env1/
-
 # temp database
 Gofttt/db.sqlite3
 
 # temp files
 Gofttt/media
 Gofttt/static
-
-
 # cache files
 Gofttt/__pycache__
 Gofttt/*/__pycache__

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}  
+{% load static %}  
+{% load humanize %}  
+
+{% block content %}  
+
+<main class="main">  
+    <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/photo17166891664.jpg' %}')">  
+        <div class="container">  
+            <h2 class="breadcrumb-title">رسید پرداخت</h2>  
+            <ul class="breadcrumb-menu">  
+                <li><a href="{% url 'home:index' %}">خانه</a></li>  
+                <li class="active">رسید پرداخت</li>  
+            </ul>  
+        </div>  
+    </div>  
+    
+    <div class="receipt-area py-80">  
+        <div class="container">  
+            <div class="card receipt-wrap">  
+                <h2 class="receipt-title">جزئیات پرداخت</h2>  
+                <div class="receipt-info text-center">  
+                    {% if success %}  
+                        <p class="receipt-status" style="color: green;">پرداخت شما با موفقیت انجام شد!</p>  
+                        <p><strong>مبلغ پرداخته شده:</strong> {{ amount|intcomma }} ریال</p>  
+                        <p><strong>شماره تراکنش:</strong> {{ transaction_id }}</p>  
+                        
+                        <!-- دکمه برای بازگشت به صفحه اصلی -->  
+                        <div class="receipt-btn">  
+                            <a href="{% url 'home:index' %}" class="theme-btn">بازگشت به صفحه اصلی</a>  
+                        </div>  
+                    {% else %}  
+                        <p class="receipt-status" style="color: red;">پرداخت ناموفق بود. لطفاً دوباره تلاش کنید.</p>  
+                        <p><strong>مبلغ تلاش شده:</strong> {{ amount|intcomma }} ریال</p>  
+                        
+                        <!-- دکمه برای بازگشت به صفحه پرداخت -->  
+                        <div class="receipt-btn">  
+                            <a href="{% url 'donate:donate' %}" class="theme-btn">بازگشت به صفحه پرداخت</a>  
+                        </div>  
+                    {% endif %}  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+
+</main>  
+
+<style>  
+    .receipt-wrap {  
+        background-color: #ffffff;  
+        border-radius: 15px;  
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);  
+        padding: 30px;  
+        margin: 0 auto;  
+        max-width: 600px;  
+        text-align: center;  
+    }  
+
+    .receipt-title {  
+        font-size: 24px;  
+        color: #333;  
+        margin-bottom: 20px;  
+    }  
+
+    .receipt-info {  
+        margin: 20px 0;  
+    }  
+
+    .receipt-status {  
+        font-size: 18px;  
+        margin-bottom: 10px;  
+    }  
+
+    .receipt-btn a {  
+        display: inline-block;  
+        margin-top: 20px;  
+        padding: 10px 20px;  
+        font-weight: bold;  
+        color: #fff;  
+        background-color: #28a745; /* رنگ دکمه موفق */  
+        border-radius: 5px;  
+        text-decoration: none;  
+        transition: background-color 0.3s;  
+    }  
+
+    .receipt-btn a:hover {  
+        background-color: #218838; /* رنگ دکمه در حالت hover */  
+    }  
+</style>  
+
+{% endblock %}  

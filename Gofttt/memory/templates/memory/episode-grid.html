@@ -7,10 +7,10 @@
 
     <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/photo17166891664.jpg' %}')">
         <div class="container">
-            <h2 class="breadcrumb-title">اپیسود دسته ای</h2>
+            <h2 class="breadcrumb-title">لیست گفت‌کست ها</h2>
             <ul class="breadcrumb-menu">
                 <li><a href="{% url 'home:index' %}">خانه</a></li>
-                <li class="active">دسته اپیسود</li>
+                <li class="active">گفت‌کست ها</li>
             </ul>
         </div>
     </div>
@@ -35,14 +35,21 @@
                         <div class="podcast-widget">
                             <h4 class="widget-title">دسته بندی</h4>
                             <ul class="category-list">
-                                <li><a href="#"><i class="far fa-microphone-lines"></i>گفت‌کست زندگی<span>(۱۵)</span></a></li>
-                                <li><a href="#"><i class="far fa-microphone-lines"></i>گفت‌کست انقلابی<span>(۲۰)</span></a></li>
-                                <li><a href="#"><i class="far fa-microphone-lines"></i> گفت‌کست اساطیری<span>(۰۵)</span></a></li>
-                                <li><a href="#"><i class="far fa-microphone-lines"></i>گفت‌کست سفر<span>(۰۷)</span></a></li>
-                                <li><a href="#"><i class="far fa-microphone-lines"></i>گفت‌کست بیوگرافی<span>(۰۹)</span></a></li>
-                                <li><a href="#"><i class="far fa-microphone-lines"></i>گفت‌کست سربازی<span>(۲۵)</span></a></li>
-                                <li><a href="#"><i class="far fa-microphone-lines"></i>گفت‌کست دانش‌آموزی<span>(۲۱)</span></a></li>
-                                <li><a href="#"><i class="far fa-microphone-lines"></i>گفت‌کست دانشجویی<span>(۱۲)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>خاطرات استنادی<span>(۱۵)</span></a></li>
+                                <!-- <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        آموزش<span>(۲۰)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i> پادکست
+                                        لایف استایل<span>(۰۵)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        سفر<span>(۰۷)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        تکنولوژي<span>(۰۹)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        پزشکی<span>(۲۵)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        کمدی<span>(۲۱)</span></a></li>
+                                <li><a href="#"><i class="far fa-microphone-lines"></i>پادکست
+                                        رشد زندگی<span>(۱۲)</span></a></li> -->
                             </ul>
                         </div>
                         <div class="podcast-widget">
@@ -74,7 +81,7 @@
                     <div class="podcast-sort">
                         <div class="row align-items-center">
                             <div class="col-md-6 col-lg-6 col-xl-8">
-                                <div class="podcast-sort-show">نمایش ۱-۱۵ از ۵۰ نتیجه</div>
+                                <div class="podcast-sort-show">نمایش ۱-۱۵ از 219 نتیجه</div>
                             </div>
                             <div class="col-md-6 col-lg-6 col-xl-4">
                                 <div class="podcast-sort-box">
@@ -89,174 +96,51 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row g-4">
-                        <div class="col-md-12 col-lg-6">
-                            <div class="episode-item">
-                                <div class="episode-img">
-                                    <a href="#" class="episode-favourite"><i class="far fa-heart"></i></a>
-                                    <img src="{% static 'assets/images/goft/خسروشکیبایی.jpg' %}" alt="">
-                                </div>
-                                <div class="episode-content">
-                                    <h4><a href="{% url 'memory:episode-grid' %}">خسروشکیبایی: ۱</a></h4>
-                                    <div class="episode-meta">
-                                        <ul>
-                                            <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
-                                            <li><i class="far fa-calendar-alt"></i>۲۰ خرداد , ۱۴۰۳</li>
-                                        </ul>
+                    <div class="episode-list">
+                        <div class="row g-4">
+                            {% for podcast in podcasts %}
+                            <div class="col-md-12">
+                                <div class="episode-item">
+                                    <div class="episode-img">
+                                        <a href="{% url 'home:podcast_detail' podcast.id %}" class="episode-favourite"><i class="far fa-heart"></i></a>
+                                        {% if memory.image %}  
+                                        <img src="{{ podcast.image.url }}" alt="{{ podcast.title }}">  
+                                         {% else %}  
+                                        <img src="{% url 'home:podcast_detail' podcast.id %}" alt="تصویری موجود نیست" style="width: 100%; height: auto;">  
+                                        <!-- می‌توانید یک تصویر پیش فرض برای الگوها نشان دهید -->  
+                                        {% endif %}
                                     </div>
-                                    <div class="episode-bottom">
-                                        <div class="episode-host">
-                                            <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
+                                    <div class="episode-content">
+                                        <h4><a href="{% url 'home:episode_detail' podcast.id %}">{{ podcast.title }}</a></h4>
+                                        <div class="episode-meta">
+                                            <ul>
+                                                <li><i class="far fa-podcast"></i> هدیه دهید</li>
+                                                <li><i class="far fa-calendar-alt"></i>{{ podcast.date }}</li>
+                                            </ul>
                                         </div>
-                                        <div class="episode-player">
-                                            <button type="button" class="player-btn amplitude-play-pause"
-                                                data-song-add="8">
-                                                <i class="fas fa-play"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="episode-item">
-                                <div class="episode-img">
-                                    <a href="{% url 'memory:episode-grid' %}" class="episode-favourite"><i class="far fa-heart"></i></a>
-                                    <img src="{% static 'assets/images/goft/حمیدرضا صدر.jpg' %}" alt="">
-                                </div>
-                                <div class="episode-content">
-                                    <h4><a href="#">حمیدرضا صدر: ۲</a></h4>
-                                    <div class="episode-meta">
-                                        <ul>
-                                            <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
-                                            <li><i class="far fa-calendar-alt"></i>۲۰ خرداد , ۱۴۰۳</li>
-                                        </ul>
-                                    </div>
-                                    <div class="episode-bottom">
-                                        <div class="episode-host">
-                                            <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
-                                        </div>
-                                        <div class="episode-player">
-                                            <button type="button" class="player-btn amplitude-play-pause"
-                                                data-song-add="9">
-                                                <i class="fas fa-play"></i>
-                                            </button>
+                                        <p>
+                                            {{ podcast.body|truncatewords:20 }} <!-- نمایش 20 کلمه اول متن -->
+                                        </p>
+                                        <div class="episode-bottom">
+                                            <div class="episode-host">
+                                                <h6><i class="far fa-user-tie-hair"></i> توسط گروه گفت</h6>
+                                            </div>
+                                            <div class="episode-player">
+                                                <button type="button" class="player-btn amplitude-play-pause"
+                                                    data-song-add="8">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                                <button type="button" class="download-btn" onclick="window.location.href='{{ podcast.file.url }}'">  
+                                                    <i class="fa fa-download"></i>  
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="episode-item">
-                                <div class="episode-img">
-                                    <a href="{% url 'memory:episode-grid' %}" class="episode-favourite"><i class="far fa-heart"></i></a>
-                                    <img src="{% static 'assets/images/goft/شریعتی.jpg' %}" alt="">
-                                </div>
-                                <div class="episode-content">
-                                    <h4><a href="#">شریعتی: ۳</a></h4>
-                                    <div class="episode-meta">
-                                        <ul>
-                                            <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
-                                            <li><i class="far fa-calendar-alt"></i>۲۰ خرداد , ۱۴۰۳</li>
-                                        </ul>
-                                    </div>
-                                    <div class="episode-bottom">
-                                        <div class="episode-host">
-                                            <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
-                                        </div>
-                                        <div class="episode-player">
-                                            <button type="button" class="player-btn amplitude-play-pause"
-                                                data-song-add="10">
-                                                <i class="fas fa-play"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="episode-item">
-                                <div class="episode-img">
-                                    <a href="{% url 'memory:episode-grid' %}" class="episode-favourite"><i class="far fa-heart"></i></a>
-                                    <img src="{% static 'assets/images/goft/عاشقیت.jpg' %}" alt="">
-                                </div>
-                                <div class="episode-content">
-                                    <h4><a href="#">عاشقیت: ۴</a></h4>
-                                    <div class="episode-meta">
-                                        <ul>
-                                            <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
-                                            <li><i class="far fa-calendar-alt"></i>۲۰ خرداد , ۱۴۰۳</li>
-                                        </ul>
-                                    </div>
-                                    <div class="episode-bottom">
-                                        <div class="episode-host">
-                                            <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
-                                        </div>
-                                        <div class="episode-player">
-                                            <button type="button" class="player-btn amplitude-play-pause"
-                                                data-song-add="11">
-                                                <i class="fas fa-play"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="episode-item">
-                                <div class="episode-img">
-                                    <a href="{% url 'memory:episode-grid' %}" class="episode-favourite"><i class="far fa-heart"></i></a>
-                                    <img src="{% static 'assets/images/goft/انقلاب اسلامی.jpg' %}" alt="">
-                                </div>
-                                <div class="episode-content">
-                                    <h4><a href="#">انقلاب اسلامی: ۵</a></h4>
-                                    <div class="episode-meta">
-                                        <ul>
-                                            <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
-                                            <li><i class="far fa-calendar-alt"></i>۲۰ خرداد , ۱۴۰۳</li>
-                                        </ul>
-                                    </div>
-                                    <div class="episode-bottom">
-                                        <div class="episode-host">
-                                            <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
-                                        </div>
-                                        <div class="episode-player">
-                                            <button type="button" class="player-btn amplitude-play-pause"
-                                                data-song-add="12">
-                                                <i class="fas fa-play"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="episode-item">
-                                <div class="episode-img">
-                                    <a href="{% url 'memory:episode-grid' %}" class="episode-favourite"><i class="far fa-heart"></i></a>
-                                    <img src="{% static 'assets/images/goft/دانشجو.jpg' %}" alt="">
-                                </div>
-                                <div class="episode-content">
-                                    <h4><a href="#">دانشجو: ۶</a></h4>
-                                    <div class="episode-meta">
-                                        <ul>
-                                            <li><i class="far fa-podcast"></i> اپیسود ۱۸</li>
-                                            <li><i class="far fa-calendar-alt"></i>۲۰ خرداد , ۱۴۰۳</li>
-                                        </ul>
-                                    </div>
-                                    <div class="episode-bottom">
-                                        <div class="episode-host">
-                                            <h6><i class="far fa-user-tie-hair"></i> توسط نیکی کریمی</h6>
-                                        </div>
-                                        <div class="episode-player">
-                                            <button type="button" class="player-btn amplitude-play-pause"
-                                                data-song-add="13">
-                                                <i class="fas fa-play"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% empty %}  
+                            <p>هیچ خاطره‌ای موجود نیست.</p>  
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -268,15 +152,22 @@
                                         <span aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
                                     </a>
                                 </li>
-                                <li class="page-item active"><a class="page-link" href="#">۱</a></li>
-                                <li class="page-item"><a class="page-link" href="#">۲</a></li>
+                                {% for page_num in page_range %}
+                                <li class="page-item {% if page_num == current_page %}active{% endif %}"><a class="page-link" href="#">۱</a></li>
+                                <!-- <li class="page-item"><a class="page-link" href="#">۲</a></li>
                                 <li class="page-item"><span class="page-link">...</span></li>
                                 <li class="page-item"><a class="page-link" href="#">۱۰</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
+                                <li class="page-item"> -->
+                                    <a class="page-link" href="?page={{ page_num }}" aria-label="Next">
+                                        {{ page_num }}
                                     </a>
                                 </li>
+                                {% endfor %}  
+                                <li class="page-item">  
+                                    <a class="page-link" href="#" aria-label="Next">  
+                                        <span aria-hidden="true"><i class="fas fa-arrow-right"></i></span>  
+                                    </a>  
+                                </li>  
                             </ul>
                         </div>
                     </div>

@@ -34,3 +34,13 @@ class UserChangeForm(forms.ModelForm):
         model = User 
         fields = ('phone_number' , 'email', 'full_name' , 'password' , 'last_login', 'total_donate', 'display_name')
 
+
+class ProfileCompleteForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'profile_image']
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'profile_image': forms.FileInput(attrs={'class': 'form-control'}),
+        }

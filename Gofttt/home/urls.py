@@ -5,6 +5,11 @@ app_name = 'home'
 
 urlpatterns = [
     path("" , IndexView.as_view() , name='index'),
+    path('like/<int:pk>/', IndexView.as_view(), name='like_content'),  # مسیر لایک  
+    path('download/<int:pk>/', IndexView.as_view(), name='download_content'),
+    path("podcast/<int:id>/", PodcastDetailView.as_view(), name='podcast_detail'),
+    path("memory/<int:id>/", EpisodeDetailView.as_view(), name='episode_detail'),
+    path("podcastgrid/", PodcastGridView.as_view(), name='podcastgrid'),
     path("about/", AboutView.as_view(), name='about'),
     path("contact/", ContactView.as_view(), name='contact'),
     path("team/", TeamView.as_view(), name='team'),

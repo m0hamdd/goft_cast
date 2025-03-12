@@ -11,5 +11,7 @@ urlpatterns = [
     path("user_forgotpassword/", ForgotPasswordView.as_view(), name="forgot_password"),
     path("user_forgotpassword_vertify/", ForgotPasswordVertifyView.as_view(), name="forgot_password_vertify"),
     path("user_forgotpassword_newpass/", ForgotPasswordNewView.as_view(), name="new_password"),
+    path("profile_complete/", ProfileCompleteView.as_view(), name="profile_complete"),
+    path("edit_profile/", EditProfileView.as_view(), name="edit_profile"),
     path("user_panel/", UserPanelView.as_view(), name="user_panel")
 ]

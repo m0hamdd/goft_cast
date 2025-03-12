@@ -13,7 +13,7 @@ class User(AbstractBaseUser):
     email = models.EmailField(max_length=255, unique=True, null=True, blank=True)
     full_name = models.CharField(max_length=255)
     display_name = models.BooleanField(default=True)
-    profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
+    profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True, default='download.png')
     total_donate = models.PositiveBigIntegerField(default=0)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)

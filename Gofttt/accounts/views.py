@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.utils import timezone
 import datetime as my_datetime
 from django.views import View
+from .forms import ProfileCompleteForm
+
 
 # User Login view.
 class UserLoginView(View):
@@ -132,13 +134,13 @@ class UserRegisterVertifyView(View):
                 user.save()
                 code_instance.delete()
                 del request.session['user_registration_info']
-                messages.success(request, "حساب کاربری شما ایجاد شد", 'success')
+                messages.success(request, "حساب کاربری شما ایجاد شد! لطفاً پروفایل خود را تکمیل کنید.", 'success')
 
                 #  login after register 
                 our_user = authenticate(username=user_session['phone_number'], password=user_session['password'])
                 if our_user is not None:
                     login(request, user)
-                    return redirect("home:index")
+                    return redirect("accounts:profile_complete")
               
             else:
                 code_instance.delete()
@@ -270,10 +272,38 @@ class ForgotPasswordNewView(View):
             return redirect('home:index')
 
 
+class ProfileCompleteView(View):
+    def get(self, request):
+        form = ProfileCompleteForm(instance=request.user)
+        return render(request, "accounts/profile_complete.html", {"form": form})
+
+    def post(self, request):
+        form = ProfileCompleteForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "پروفایل شما با موفقیت تکمیل شد!")
+            return redirect("accounts:user_panel")
+        else:
+            messages.error(request, "خطایی رخ داد. لطفاً اطلاعات را بررسی کنید.")
+        return render(request, "accounts/profile_complete.html", {"form": form})
+    
 
 class UserPanelView(View):
     def get(self, request):
-        return render(request, 'accounts/panel.html')
-    
+        return render(request, "accounts/panel.html", {"user": request.user})
+
+
+class EditProfileView(View):
+    def get(self, request):
+        form = ProfileCompleteForm(instance=request.user)
+        return render(request, "accounts/edit_profile.html", {"form": form})
+
     def post(self, request):
-        return render(request, 'accounts/panel.html')
+        form = ProfileCompleteForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "پروفایل شما با موفقیت به‌روزرسانی شد!")
+            return redirect("accounts:user_panel")
+        else:
+            messages.error(request, "خطایی رخ داده است. لطفاً اطلاعات را بررسی کنید.")
+        return render(request, "accounts/edit_profile.html", {"form": form})

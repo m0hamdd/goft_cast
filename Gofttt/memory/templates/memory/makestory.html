@@ -1,146 +1,161 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %}  
+{% load static %}    
 
-{% block content %}
+{% block content %}  
 
-<main class="main">
+<main class="main">  
 
-    <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/photo17166891664.jpg' %}')">
-        <div class="container">
-            <h2 class="breadcrumb-title">خاطرات شما</h2>
-            <ul class="breadcrumb-menu">
-                <li><a href="{% url 'home:index' %}">خانه</a></li>
-                <li class="active">خاطرات شما</li>
-            </ul>
-        </div>
-    </div>
+    <div class="site-breadcrumb" style="background: url('{% static 'assets/images/goft/photo17166891664.jpg' %}')">  
+        <div class="container">  
+            <h2 class="breadcrumb-title">خاطرات شما</h2>  
+            <ul class="breadcrumb-menu">  
+                <li><a href="{% url 'home:index' %}">خانه</a></li>  
+                <li class="active">خاطرات شما</li>  
+            </ul>  
+        </div>  
+    </div>  
 
-    <div class="process-area py-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mx-auto">
-                    <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
-                        <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> چطور کار میکنیم ؟</span>
-                        <h2 class="site-title">بیایید بررسی کنیم <span>خاطرات</span> شما چگونه کار می کند</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 wow fadeInUp" data-wow-delay=".25s">
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="process-item">
-                        <span class="count">۰۱</span>
-                        <div class="process-icon">
-                            <img src="{% static 'assets/images/record.svg' %}" alt="">
-                        </div>
-                        <div class="process-content">
-                            <h4> ثبت خاطره‌ی صوتی</h4>
-                            <p>
-                                خاطره‌ای خاص و به یادماندنی دارید؟ آن را با صدای خود ثبت کنید تا برای همیشه ماندگار شود                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="process-item">
-                        <span class="count">۰۲</span>
-                        <div class="process-icon">
-                            <img src="{% static 'assets/images/podcast-edit.svg' %}" alt="">
-                        </div>
-                        <div class="process-content">
-                            <h4>ویرایش خاطره</h4>
-                            <p>
-                                این یک واقعیت ثابت طولانی مدت است که یک خواننده از طرح بندی منحرف می شود
-                            </p>
+    <div class="process-area py-100">  
+        <div class="container">  
+            <div class="row">  
+                <div class="col-lg-6 mx-auto">  
+                    <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">  
+                        <span class="site-title-tagline"><i class="fas fa-microphone-lines"></i> چطور کار میکنیم ؟</span>  
+                        <h2 class="site-title">بیایید بررسی کنیم <span>خاطرات</span> شما چگونه کار می کند</h2>  
+                    </div>  
+                </div>  
+            </div>  
+            <div class="row g-4 wow fadeInUp" data-wow-delay=".25s">  
+                <!-- نمایش فرآیندهای مختلف -->  
+                <div class="row g-4 wow fadeInUp" data-wow-delay=".25s">
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="process-item">
+                            <span class="count">۰۱</span>
+                            <div class="process-icon">
+                                <img src="{% static 'assets/images/record.svg' %}" alt="">
+                            </div>
+                            <div class="process-content">
+                                <h4> ثبت خاطره‌ی صوتی</h4>
+                                <p>
+                                    خاطره‌ای خاص و به یادماندنی دارید؟ آن را با صدای خود ثبت کنید تا برای همیشه ماندگار شود                            </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="process-item">
-                        <span class="count">۰۳</span>
-                        <div class="process-icon">
-                            <img src="{% static 'assets/images/podcast-upload.svg' %}" alt="">
-                        </div>
-                        <div class="process-content">
-                            <h4>بارگزاری خاطره خود</h4>
-                            <p>
-                                این یک واقعیت ثابت طولانی مدت است که یک خواننده از طرح بندی منحرف می شود
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="process-item">
-                        <span class="count">۰۴</span>
-                        <div class="process-icon">
-                            <img src="{% static 'assets/images/premium-podcast.svg' %}" alt="">
-                        </div>
-                        <div class="process-content">
-                            <h4>برو به خاطرات من</h4>
-                            <p>
-                                این یک واقعیت ثابت طولانی مدت است که یک خواننده از طرح بندی منحرف می شود
-                            </p>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="process-item">
+                            <span class="count">۰۲</span>
+                            <div class="process-icon">
+                                <img src="{% static 'assets/images/podcast-edit.svg' %}" alt="">
+                            </div>
+                            <div class="process-content">
+                                <h4>ویرایش خاطره</h4>
+                                <p>
+                                    این یک واقعیت ثابت طولانی مدت است که یک خواننده از طرح بندی منحرف می شود
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="process-item">
+                            <span class="count">۰۳</span>
+                            <div class="process-icon">
+                                <img src="{% static 'assets/images/podcast-upload.svg' %}" alt="">
+                            </div>
+                            <div class="process-content">
+                                <h4>بارگزاری خاطره خود</h4>
+                                <p>
+                                    این یک واقعیت ثابت طولانی مدت است که یک خواننده از طرح بندی منحرف می شود
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="process-item">
+                            <span class="count">۰۴</span>
+                            <div class="process-icon">
+                                <img src="{% static 'assets/images/premium-podcast.svg' %}" alt="">
+                            </div>
+                            <div class="process-content">
+                                <h4>برو به خاطرات من</h4>
+                                <p>
+                                    این یک واقعیت ثابت طولانی مدت است که یک خواننده از طرح بندی منحرف می شود
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <!-- اطلاعات دیگر فرآیندها -->  
+            </div>  
+        </div>  
+    </div>  
 
-    <div class="contact-area py-100">
-        <div class="container">
-            <div class="contact-form-wrap">
-                <div class="row align-items-center">
-                    <div class="col-lg-5">
-                        <div class="contact-img">
-                            <img src="{% static 'assets/images/goft/kflkld.png' %}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 align-self-center">
-                        <div class="contact-form">
+    <div class="contact-area py-100">  
+        <div class="container">  
+            <div class="contact-form-wrap">  
+                <div class="row align-items-center">  
+                    <div class="col-lg-5">  
+                        <div class="contact-img">  
+                            <img src="{% static 'assets/images/goft/kflkld.png' %}" alt="">  
+                        </div>  
+                    </div>  
+                    <div class="col-lg-7 align-self-center">  
+                        <div class="contact-form">  
                             <div class="contact-form-header">  
                                 <h2 style="font-size: 2.5em; color: #33a329; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">خاطره بگذارید</h2>  
                                 <p style="font-size: 1.2em; line-height: 1.8; color: #555;">  
                                     خاطره‌ای بگذارید، قصه‌ای از دیروز برای فردای روشن. بگذارید صدایتان، روایتگرِ عشقی باشد که در تار و پودِ لحظه‌ها تنیده شده است.  
-
-                                    اینجا، بستری فراهم است تا خاطراتتان را با جان و دل به ودیعه بگذارید و به یادگار، برای آیندگان به امانت سپارید.  
                                 </p>  
-                            </div>
-                            <form method="post" action="{% static 'assets/php/contact.php' %}" id="contact-form">
-                                <div class="row">
-                                    <!-- <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="name"
-                                                placeholder="نام و نام خانوادگی" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="email"
-                                                placeholder="ایمیل شما" required="">
-                                        </div>
-                                    </div> -->
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="subject"
-                                        placeholder="موضوع شما" required="">
-                                </div>
-                                <div class="form-group">
-                                    <textarea name="message" cols="30" rows="5" class="form-control"
-                                        placeholder="پیام خود را بنویسید"></textarea>
-                                </div>
-                                <button type="submit" class="theme-btn">ثبت خاطره <i class="far fa-paper-plane"></i></button>
-                                <div class="col-md-12 mt-3">
-                                    <div class="form-messege text-success"></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                            </div>  
+                            <form method="post" enctype="multipart/form-data" action="{% url 'memory:makestory' %}">  
+                                {% csrf_token %}  
+                        
+                                <div class="form-group">  
+                                    <input type="text" class="form-control" name="title" placeholder="عنوان خاطره" required>  
+                                </div>  
+                        
+                                <div class="form-group">  
+                                    <select name="category" class="form-control" required>  
+                                        <option value="">دسته‌بندی را انتخاب کنید</option>  
+                                        <option value="family">خاطرات استنادی</option>  
+                                        <option value="friends">خاطرات بی نام</option>  
+                                        <option value="travel">سایر</option>  
+                                        <!-- <option value="funny">خنده‌دار</option>  
+                                        <option value="other">سایر</option>   -->
+                                    </select>  
+                                </div>  
+                        
+                                <div class="form-group">  
+                                    <textarea name="text" cols="30" rows="5" class="form-control" placeholder="متن خاطره خود را بنویسید" required></textarea>  
+                                </div>  
+                        
+                                <div class="form-group">  
+                                    <label>عکس (اجباری)</label>  
+                                    <input type="file" name="image" class="form-control">  
+                                </div>  
+                        
+                                <div class="form-group">  
+                                    <label>صوت (اجباری)</label>  
+                                    <input type="file" name="audio" class="form-control">  
+                                </div>  
+                        
+                                <button type="submit" class="theme-btn">ثبت خاطره <i class="far fa-paper-plane"></i></button>  
+                        
+                                <div class="col-md-12 mt-3">  
+                                    <div class="form-messege text-success"></div>  
+                                    {% if messages %}  
+                                        {% for message in messages %}  
+                                            <div class="alert alert-danger">{{ message }}</div>  
+                                        {% endfor %}  
+                                    {% endif %}  
+                                </div>  
+                            </form>  
+                        </div>    
+                    </div>  
+               </div>  
+            </div>  
+         </div>  
+    </div>  
 
+</main>  
 
-</main>
-
-
-{% endblock %}
+{% endblock %}  

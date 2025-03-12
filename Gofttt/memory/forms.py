@@ -1,26 +1,27 @@
 from django import forms
-
-
 from .models import Memory,Comment,Report,DelCast
 from ckeditor.widgets import CKEditorWidget
+from django import forms
+from django.contrib.contenttypes.models import ContentType
+ 
 
-
+ 
+ 
 class MemoryForm(forms.ModelForm):
-
+ 
     class Meta:
         model = Memory
         fields= ['title','category','body','image', 'audio_file']
         widgets = {
-            'title': forms.TextInput(attrs={'class':'form-control','placeholder':'سر تیتر خاطره شما'}),
+            'title': forms.TextInput(attrs={'class':'form-control','placeholder':'موضوع خاطره شما'}),
             'category': forms.Select(attrs={'class':'form-control'}),
             'body': CKEditorWidget(),
             'image': forms.ClearableFileInput(attrs={'class':'form-control'}),
             'audio_file': forms.ClearableFileInput(attrs={'class':'form-control'}),
         }
-
-from django import forms
-from django.contrib.contenttypes.models import ContentType
-
+ 
+ 
+ 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -90,10 +91,12 @@ class DelCastForm(forms.ModelForm):
             'Recipients_name_surname',
             'caption',
             'time',
-            'image'
+            'image',
+            'audio_file'
         ]
         widgets = {
-            'caption': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
+            'caption': forms.Textarea(attrs={'class': 'form-control', 'rows': 8}),
             'Occasion': forms.Select(attrs={'class': 'form-control'}),
             'time': forms.Select(attrs={'class': 'form-control'}),
+            'audio_file': forms.Select(attrs={'class': 'form-control'})
         }

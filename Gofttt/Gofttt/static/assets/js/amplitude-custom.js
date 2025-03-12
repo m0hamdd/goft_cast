@@ -210,3 +210,4 @@ $('.audio-player-hide').on('click', function () {
   $('.audio-player').toggleClass('show');
   $('#playlist-container').hide();
 });
+
