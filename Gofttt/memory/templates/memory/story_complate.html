@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خاطره ثبت شد</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>خاطره شما با موفقیت ثبت شد!</h2>
+        <p>ممنون که خاطره خود را با ما به اشتراک گذاشتید.</p>
+
+        {% if memory %}
+            <h3>{{ memory.title }}</h3>
+            <p>{{ memory.body }}</p>
+        {% endif %}
+
+        <a href="{% url 'memory:make' %}" class="btn">نوشتن خاطره جدید</a>
+    </div>
+
+</body>
+</html>

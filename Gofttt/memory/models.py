@@ -46,10 +46,8 @@ class PodcastDownload(models.Model):
         return f"Download of {self.podcast.title} by {self.user if self.user else 'Anonymous'} on {self.downloaded_at}"
 
 
-
- #creating memories by all user and groups
 class Memory(models.Model):
-  
+
     CATEGORY_CHOICES = [
         ('unnamed_memory', 'خاطرات بی نام'),
         ('documentary_memory', 'خاطرات استنادی'),
@@ -58,26 +56,37 @@ class Memory(models.Model):
     ]
 
     title = models.CharField(max_length=255)
-    category = models.CharField(max_length=255,choices=CATEGORY_CHOICES,default='unnamed_memory')
-    slug = models.SlugField(max_length=255, unique=True)
+    category = models.CharField(max_length=255, choices=CATEGORY_CHOICES, default='unnamed_memory')
+    slug = models.SlugField(max_length=255, unique=True)  # فیلد یونیک
     body = RichTextField(blank=True, null=True)
     image = models.ImageField(
-        upload_to= 'templates/memory/Memory_image/',
+        upload_to='templates/memory/Memory_image/',
         blank=True,
-        null=True ,
+        null=True,
         validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])]
     )
-
-    audio_file = models.FileField(upload_to='templates/memory/voice_memory/'  ,blank=True, null=True)
+    audio_file = models.FileField(upload_to='templates/memory/voice_memory/', blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
-    def str(self):
+    def __str__(self):
         return f"memories of {self.user.username} --- {self.title} ---"
 
+    def save(self, *args, **kwargs):
+        if not self.slug:  # اگر slug تنظیم نشده
+            base_slug = slugify(self.title)  # ایجاد slug از عنوان
+            unique_slug = base_slug
+            num = 1
+            # بررسی اینکه آیا این slug قبلاً وجود دارد
+            while Memory.objects.filter(slug=unique_slug).exists():
+                unique_slug = f"{base_slug}-{num}"  # اگر تکراری بود، به آن عدد اضافه می‌کنیم
+                num += 1
+            self.slug = unique_slug  # تنظیم slug به مقدار یونیک
+
+        super().save(*args, **kwargs)  # فراخوانی متد save اصلی
+
     class Meta:
-        ordering = ['-created']
- 
+        ordering = ['-created']  # مرتب‌سازی بر اساس تاریخ ایجاد
  #the like & cm class will support any modle
 class Comment(models.Model):
 

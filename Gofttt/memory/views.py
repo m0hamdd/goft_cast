@@ -2,57 +2,50 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import FileResponse
 from django.views.generic import ListView  
 from django.utils.timezone import now
-from django.urls import reverse
+
 from django.views import View
-from unicodedata import category
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from memory.forms import MemoryForm,DelCastForm
 from django.contrib import messages
-from .models import Memory, Podcast,Like,DelCast
+from .models import *
 from django.contrib.contenttypes.models import ContentType
 from .models import Podcast, PodcastDownload
 
  
  
  # Memory View.
-class MemoriesView(LoginRequiredMixin,View):
+class MemoriesView(LoginRequiredMixin, View):
     form_class = MemoryForm
+
     def get(self, request):
         form = self.form_class()
-        return render(request, 'memory/makestory.html',{'form': form})
-    
+        return render(request, 'memory/makestory.html', {'form': form})
+
     def post(self, request):
-        form = self.form_class(request.POST)
+        form = self.form_class(request.POST, request.FILES)
         if form.is_valid():
             cd = form.cleaned_data
-            memory = Memory.objects.create(title=cd['title'], body = cd['body'],category=cd['category'],user = request.user)
+
+            # بررسی خالی بودن فیلدها
             if not cd.get('title') or not cd.get('category') or not cd.get('body'):
-                messages.error(request, 'فیلد های ضروری نباید خالی باشد ' , 'danger')
-                return render(request, 'memory/makestory.html')
+                messages.error(request, 'فیلدهای ضروری نباید خالی باشند', 'danger')
+                return render(request, 'memory/makestory.html', {'form': form})
+
+            # ذخیره‌ی فرم
+            memory = form.save(commit=False)
+            memory.user = request.user  # در صورتی که مدل دارای فیلد user است
             memory.save()
-            if memory.category == 'unnamed_memory':
-                return redirect(reverse('BnameView'))
-            elif memory.category == 'documentary_memory':
-                return redirect(reverse('StenadiView'))
-            elif  memory.category == 'OralTradition':
-                return redirect(reverse(' SonatView'))
-            elif memory.category == 'oral_memory':
-                return redirect(reverse('TarikhView'))
-            else:
-                return redirect('memory/makestory.html', {'form': form})
-        messages.info(request,"با موفقیت ارسال شد." , 'error' )
-        return render(request, 'memory/makestory.html' ,{'form':form })
+            messages.success(request, 'خاطره با موفقیت ذخیره شد!', 'success')
 
-
+            # بعد از ثبت، رندر گرفتن صفحه‌ی story_complate.html
+            return render(request, 'memory/story_complete.html', {'memory': memory})
+        return render(request, 'memory/makestory.html', {'form': form})
 class EpiListView(View):
     def get(self, request):
         return render(request, 'memory/episodelist.html')
 
-class ListCategory(View):
-    template_name = ''
-    def get(self, request):
-        memories = Memory.objects.filter(category = self.category)
-        return render(request, self.template_name, {'memories':memories})
+
 
 # Stenadi View.
 class StenadiView(ListView):  
@@ -61,7 +54,7 @@ class StenadiView(ListView):
     context_object_name = 'memories'  # نام متغیر در تمپلیت  
 
     def get_queryset(self):  
-        return Memory.objects.all()  # می‌توانید اینجا فیلترهای خاصی اضافه کنید 
+        return Memory.objects.filter(category='documentary_memory')  # می‌توانید اینجا فیلترهای خاصی اضافه کنید
 
 
 # Episode-Single View.
@@ -72,18 +65,23 @@ class StenadiView(ListView):
 
 
 # Bname View.
-class BnameView(ListCategory):
-    def get(self, request ):
-        return render(request, 'memory/bname.html')
+class BnameView(View):
+    model = Memory
+    template_name = 'memory/bname.html'
+    context_object_name = 'memories'
+
+
+    def get_queryset(self, request ):
+        return Memory.objects.filter(category='unnamed_memory')
 
     
 # Sonat View.
-class SonatView(ListCategory):
+class SonatView(View):
     def get(self, request,):
         return render(request, 'memory/sonat.html')
     
 # Tarikh View.
-class TarikhView(ListCategory):
+class TarikhView(View):
     def get(self, request):
         return render(request, 'memory/tarikh.html')
  
